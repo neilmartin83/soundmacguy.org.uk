@@ -6,3 +6,15 @@
     font-size: 1.5rem;
     color: #4b4b4b;
 }
+
+.icon {
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        path {
+            fill: $grey-color;
+        }
+    }
+}
