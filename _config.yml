@@ -8,6 +8,7 @@ slack_username: neilmartin83
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-gist
   - jekyll-paginate
 paginate: 10
 paginate_path: "/page/:num"

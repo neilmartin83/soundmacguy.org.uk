@@ -28,6 +28,6 @@ Administrators may wish to suppress this dialog in some scenarios, for example:
 
 **The following configuration profile will prevent this dialog from appearing:**
 
-https://gist.github.com/neilmartin83/0e8b320cf9f95f89260292dd8a6b66f1
+{% gist 0e8b320cf9f95f89260292dd8a6b66f1 %}
 
 Please be aware - users will still see prompts regarding collaboration not working in the old versions if they try to use this feature. In these cases, I would argue that they need to be aware and be upgraded as soon as possible.
