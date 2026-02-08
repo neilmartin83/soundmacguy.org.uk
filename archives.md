@@ -1,0 +1,19 @@
+---
+layout: page
+title: Archives
+---
+
+<div class="archives">
+  <p>All the posts, ever.</p>
+
+  <ul class="post-list">
+     {% for post in site.posts %}
+        <li>
+           <span class="post-meta">
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> &nbsp;|&nbsp; 
+              {{ post.date | date: "%b %-d, %Y" }}
+           </span>
+        </li>
+     {% endfor %}
+  </ul>
+</div>

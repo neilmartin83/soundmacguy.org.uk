@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+{% assign archive_posts = page.posts | default: page.items %}
+<ul>
+    {% for post in archive_posts %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>

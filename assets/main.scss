@@ -5,6 +5,7 @@
 .post-title a {
     font-size: 1.5rem;
     color: #4b4b4b;
+    font-weight: 450
 }
 
 .icon {
@@ -16,5 +17,21 @@
         path {
             fill: $grey-color;
         }
+    }
+}
+
+/* Archive page-specific styles */
+.archives {
+    a.post-link,
+    a {
+        color: #4b4b4b;
+        font-size: 1rem;
+        text-decoration: none;
+        font-weight: 600
+    }
+
+    a.post-link:hover,
+    a:hover {
+        text-decoration: underline;
     }
 }
