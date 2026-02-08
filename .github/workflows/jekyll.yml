@@ -29,12 +29,11 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-arm
     steps:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.4" # Not needed with a .ruby-version file
