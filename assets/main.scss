@@ -34,4 +34,16 @@
     a:hover {
         text-decoration: underline;
     }
+
+    .post-list .post-meta a {
+        color: #4b4b4b;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .post-list .post-meta:hover,
+    a:hover {
+        text-decoration: underline;
+    }
 }
