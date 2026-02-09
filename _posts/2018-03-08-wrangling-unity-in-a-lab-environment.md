@@ -23,7 +23,7 @@ The packages don't contain any nasty surprises and deploy straightforwardly with
 
 This gets a bit more interesting. Unity recently started offering free licenses for education, which is awesome for my institution. [The documentation](https://docs.unity3d.com/Manual/CommandLineArguments.html) reveals some promising command line arguments to license Unity programatically. Alas, the application crashes if you run it in batch mode without a user logged in, or not in their context (i.e. as root triggered by a Jamf policy). Here's a script I wrangled to firstly check for the license file, then run Unity as the logged in user if said file isn't there:
 
-https://gist.github.com/neilmartin83/bde2353e9a6efc913476073103fbf19b
+{% gist bde2353e9a6efc913476073103fbf19b %}
 
 This is supposed to be run by a Jamf Policy (triggered at login). The parameters $4, $5 and $6 are your Unity serial number, license account username and password, respectively. You could easily wrangle this into [Outset](https://github.com/chilcote/outset) by getting rid of the **sudo -u "$loggedInUser"** part and putting the actual credentials in place of the parameters - but then make sure you delete that script after it's run as you don't want that stuff on disk in your labs!
 
@@ -37,4 +37,4 @@ To get around this, we need to set some preferences _as the logged in user_. Uni
 
 The keys you'd to set to manage updates away and stop Unity signing in with your license account are **EditorUpdateShowAtStartup (integer 0)** and **UnityConnectWorkOffline (integer 1)**. Here's the script I use, again, designed to be run by Jamf at user login:
 
-https://gist.github.com/neilmartin83/2bff33f30b95de01c6add07f60c69694
+{% gist 2bff33f30b95de01c6add07f60c69694 %}

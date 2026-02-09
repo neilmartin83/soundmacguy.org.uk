@@ -5,7 +5,7 @@ date: 2018-04-07
 coverImage: "scep-icon.png"
 ---
 
-I thought I was done with SCEP (see parts [1](https://soundmacguy.wordpress.com/2017/09/18/managing-microsoft-system-center-endpoint-protection-scep-part-1/), [2](https://soundmacguy.wordpress.com/2017/09/26/managing-microsoft-system-center-endpoint-protection-scep-part-2/) and [3](https://soundmacguy.wordpress.com/2017/11/19/managing-microsoft-system-center-endpoint-protection-scep-part-3/)) but whilst undertaking an exercise looking into using SCEP on some Linux servers (and specifically looking at how it can provide reporting data to [SCOM](https://en.wikipedia.org/wiki/System_Center_Operations_Manager) via a Management Pack), I inadvertently came across a little-documented command line argument for one of its binaries, **scep\_daemon**.
+I thought I was done with SCEP (see parts [1](/2017/09/18/managing-microsoft-system-center-endpoint-protection-scep-part-1.html), [2](/2017/09/26/managing-microsoft-system-center-endpoint-protection-scep-part-2.html) and [3](/2017/11/19/managing-microsoft-system-center-endpoint-protection-scep-part-3.html)) but whilst undertaking an exercise looking into using SCEP on some Linux servers (and specifically looking at how it can provide reporting data to [SCOM](https://en.wikipedia.org/wiki/System_Center_Operations_Manager) via a Management Pack), I inadvertently came across a little-documented command line argument for one of its binaries, **scep\_daemon**.
 
 The documentation for the Linux SCEP SCOM Management Pack (what a mouthful!) vaguely alluded to feeding data to SCOM via a **\--status** argument. This argument isn't mentioned anywhere else in SCEP's Linux documentation, nor listed when you invoke **scep\_daemon --help** on either platform.
 
@@ -21,7 +21,7 @@ But we'll refer to it as **scep\_daemon** from now on (just to keep my examples
 
 Running the macOS **scep\_daemon** binary with the **\--status** argument surprisingly yields the following:
 
-```
+```bash
 $ scep_daemon --status
 RTPStatus=Enabled
 ClientVer=4.5.32.0
@@ -45,17 +45,17 @@ The results pretty much speak for themselves in terms of what they mean and you 
 
 For example, to get the status of the Real Time Protection (on access) scanning engine:
 
-```
+```bash
 scep_daemon --status | grep RTPStatus | cut -d '=' -f 2
 ```
 
 This will return "Enabled" or "Disabled". You could easily spin this into an Extension Attribute for Jamf Pro, for example:
 
-https://gist.github.com/neilmartin83/5d82c4454d88df5c60bddd4f5cdb2ab2
+{% gist 5d82c4454d88df5c60bddd4f5cdb2ab2 %}
 
-You could report on it with an Advanced Search or even use it as the criteria for a Smart Group, creating a remediation policy that runs a script to re-enable protection if it's disabled. We just need a little help from our old friend, **scep\_set**, for example (see [part 1](https://soundmacguy.wordpress.com/2017/09/18/managing-microsoft-system-center-endpoint-protection-scep-part-1/) for a more thorough overview of using it):
+You could report on it with an Advanced Search or even use it as the criteria for a Smart Group, creating a remediation policy that runs a script to re-enable protection if it's disabled. We just need a little help from our old friend, **scep\_set**, for example (see [part 1](/2017/09/18/managing-microsoft-system-center-endpoint-protection-scep-part-1.html) for a more thorough overview of using it):
 
-https://gist.github.com/neilmartin83/76105fb6c413a4f36b086006138d0bcb
+{% gist 76105fb6c413a4f36b086006138d0bcb %}
 
 As a bonus, if you've ever ran scheduled or ad-hoc on demand scans, **scep\_daemon --status** will report extra results including the type of scans run (Quick Scan and Deep Scan), the directory path they were targeted to, when they were last run and if they were interrupted, for example:
 
