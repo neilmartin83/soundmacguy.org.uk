@@ -13,13 +13,13 @@ So if you're hosting your own Jamf Pro Server in a clustered environment, you've
 
 Log into your memcached server with an account that has sudo access and run this command:
 
-```
+```bash
 echo -en "\x00\x00\x00\x00\x00\x01\x00\x00stats\r\n" | nc -q1 -u 127.0.0.1 11211
 ```
 
 If you see any output such as this (and more), then memcached is listening on UDP port 11211 (its default):
 
-```
+```bash
 STAT pid 1049
 STAT uptime 143063
 STAT time 1519915398
@@ -34,26 +34,26 @@ Time to disable that bad boy!
 
 Back up the file**/etc/memcached.conf** just in case:
 
-```
+```bash
 sudo cp /etc/memcached.conf /etc/memcached.conf.old
 ```
 
 Edit the original in your favourite text editor (**nano** for me!):
 
-```
+```bash
 sudo nano /etc/memcached.conf
 ```
 
 Add these lines to the end - don't change anything else:
 
-```
+```conf
 # Disable UDP
 -U 0
 ```
 
 Save the file **(hit CTRL+X then type Y and return)** and then restart the memcached service with this command:
 
-```
+```bash
 sudo service memcached restart
 ```
 

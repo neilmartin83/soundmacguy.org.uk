@@ -15,13 +15,13 @@ It isn't possible to disable this via managed preferences or a configuration pro
 
 All you need to do is run this command, as the current logged in user:
 
-```
+```bash
 /bin/launchctl setenv DISABLE_UPDATE_CHECK 1
 ```
 
 You'll notice that upon restarting, the auto-updating-annoying-behavior will come back. To get this to stick, run the above command in a script at login with [Outset](https://github.com/chilcote/outset) or put it in a Launch Agent, like this one (copy to **/Library/Launch Agents**):
 
-https://gist.github.com/neilmartin83/b7491abae358d445444f8606a2f12cd3
+{% gist b7491abae358d445444f8606a2f12cd3 %}
 
 Thanks to the awesome Tim Sutton for uncovering this with the Slack application a while back (before they changed it) - check out his post and please support the issue he raised on Github:
 
@@ -37,7 +37,7 @@ You can tell if an application uses the Squirrel framework by **ctrl+clicking** 
 
 Note that I have tested/verified that this works with Skype, which seems to check for and download updates on every launch. Teams seems to check for updates 15 minutes after launch, then every 45 minutes (or does it?), if you take a peek at line 54234 and beyond in **/Applications/Microsoft Teams.app/Resources/app.asar**:
 
-```
+```ini
 // Check for updates 15 mins after app start and then every 45 mins
 const INITIAL_CHECK = 15 * 60 * 1000;
 const CHECK_FREQUENCY = 3 * 60 * 60 * 1000; // TODO (jhreddy) change the following from 3 hours to 45 mins.
