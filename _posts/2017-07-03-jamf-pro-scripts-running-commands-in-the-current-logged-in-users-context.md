@@ -19,13 +19,13 @@ For a working solution, we need to do two things:
 
 ## Determine the current logged in user
 
-https://gist.github.com/neilmartin83/e6751d1a3571e1d8da40bbe8d02e90be
+{% gist e6751d1a3571e1d8da40bbe8d02e90be %}
 
 Thank's to @macmule for this one - [click here to learn more](https://macmule.com/2014/11/19/how-to-get-the-currently-logged-in-user-in-a-more-apple-approved-way/).
 
 ## Run your command as that user
 
-https://gist.github.com/neilmartin83/040326412c1a4620c79b2cb69eda7723
+{% gist 040326412c1a4620c79b2cb69eda7723 %}
 
 Keep your command in quotes and rinse and repeat that line for every further command.
 
@@ -33,6 +33,6 @@ There are a couple of commands that accomplish this, and after a nice little deb
 
 Here's an snippet of a script that runs [dockutil](https://github.com/kcrawford/dockutil) to configure a user's dock:
 
-https://gist.github.com/neilmartin83/5ec5ffb22ada1720fffbc07c5e79d27e
+{% gist 5ec5ffb22ada1720fffbc07c5e79d27e %}
 
 As a footnote, it's worth noting that you can run scripts as the current logged in user with a fantastic tool, [Outset](https://github.com/chilcote/outset), that's used by many. This post is a way to achieve a similar goal if you have Jamf Pro and want to use its built-in framework. Skinning cats and all that...

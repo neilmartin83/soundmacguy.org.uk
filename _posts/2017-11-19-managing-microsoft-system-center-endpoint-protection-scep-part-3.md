@@ -43,7 +43,7 @@ In the GUI, the preference can be found in the **Update** section, **Advanced Op
 
 Looking in **gui.cfg** it's easy to work out the actual preference:
 
-```
+```ini
 update_success_tray_report_enabled=yes
 ```
 
@@ -51,13 +51,13 @@ ProTip - you can take a copy of this file, change a preference in the GUI, then 
 
 We want to set this to **no**. The **scep\_set** command (for my username) is:
 
-```
+```bash
 scep_set --cfg=/Users/neil/.scep/gui.cfg --section gui 'update_success_tray_report_enabled=no'
 ```
 
 The SCEP GUI application has to be re-launched for this to take effect with the following 2 commands:
 
-```
+```bash
 killall scep_gui
 open "/Applications/System Center Endpoint Protection.app"
 ```
@@ -73,7 +73,7 @@ If you want to set these GUI preferences, you have to do this for each user indi
 
 Here's what I'd do for a script run by a Jamf Pro Login Policy:
 
-https://gist.github.com/neilmartin83/26af72058b7a946755f2f8ba94e4f0b4
+{% gist 26af72058b7a946755f2f8ba94e4f0b4 %}
 
 If you use [Outset](https://github.com/chilcote/outset) to run scripts at login, you shouldn't use **sudo -u** **"$loggedInUser****"** as the script is run as that user anyway (and it won't work). You still need to get the logged in username to use in the path to the **gui.cfg** file - **scep\_set** doesn't recognise ~.
 

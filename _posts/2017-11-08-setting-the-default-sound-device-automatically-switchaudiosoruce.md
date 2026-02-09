@@ -12,7 +12,7 @@ We've got Macs in lots of weird and wonderful places like recording studios and 
 
 Using **switchaudiosource** is easy and it gives good feedback. Type the command by itself to get help:
 
-```
+```bash
 switchaudiosource
 ```
 
@@ -20,7 +20,7 @@ switchaudiosource
 
 List all audio devices currently connected:
 
-```
+```bash
 switchaudiosource -a
 ```
 
@@ -28,7 +28,7 @@ switchaudiosource -a
 
 Set the output device to something specific, using a name from the list above (in this example, our RME RayDAT card - what an awesome bit of kit!):
 
-```
+```bash
 switchaudiosource -s "HDSPe RayDAT (23635536)"
 ```
 
@@ -36,7 +36,7 @@ switchaudiosource -s "HDSPe RayDAT (23635536)"
 
 Set the input device to something specific:
 
-```
+```bash
 switchaudiosource -t input -s "HDSPe RayDAT (23635536)"
 ```
 
@@ -44,7 +44,7 @@ switchaudiosource -t input -s "HDSPe RayDAT (23635536)"
 
 Tell us the current default device:
 
-```
+```bash
 switchaudiosource -c
 ```
 
@@ -56,11 +56,11 @@ You could invoke **switchaudiosource** with a script and run it at user login. 
 
 Here's my Jamf Pro login policy example:
 
-https://gist.github.com/neilmartin83/672ff01679c9a0c3aef7a8f0f2a6099b
+{% gist 672ff01679c9a0c3aef7a8f0f2a6099b %}
 
 Because I use **switchaudiosource** in a few different spaces that use different audio devices, I make use of [Jamf Pro's parameters](https://www.jamf.com/jamf-nation/articles/146/script-parameters), with **$4** being the output device and **$5** being the input:
 
-https://gist.github.com/neilmartin83/f57ccea6c38b6c9cc102254b2a1e0008
+{% gist f57ccea6c38b6c9cc102254b2a1e0008 %}
 
 ![sas7.png](/images/sas7.png)
 

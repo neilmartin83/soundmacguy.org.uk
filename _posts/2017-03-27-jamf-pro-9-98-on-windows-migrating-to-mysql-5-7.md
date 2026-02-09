@@ -35,7 +35,7 @@ You need to run it with local administrator privileges. I found the only way to 
 
 Next, issue the following command (assuming that you installed the JSS to the default location):
 
-```
+```bat
 java -jar "C:\Program Files\JSS\bin\JSSDatabaseUtil.jar"
 ```
 
@@ -49,7 +49,7 @@ In the Database Utility, click Save Backup Now and choose where you want to save
 
 Next, let's take a copy of our current MySQL settings file, just in case we need to reference it later (folks often alter things here for their specific environment). The default location for it is here:
 
-```
+```bat
 C:\ProgramData\MySQL\MySQL Server 5.6\my.ini
 ```
 
@@ -130,7 +130,7 @@ At this point, you may want to make changes to your MySQL Server setup (the stu
 
 The defaults needed tweaking for my environment - they may or may not for yours, or you may have something really funky going on where they'll be entirely different (then why are you reading this, you know way more than me!). You'll find that file here:
 
-```
+```bat
 C:\ProgramData\MySQL\MySQL Server 5.7\my.ini
 ```
 
@@ -140,33 +140,31 @@ I had to make the following changes:
 
 - Disable 'no-beep' (database backups would fail otherwise) - comment out line 62 - insert a preceding #:
 
-```
+```ini
 # no-beep
 ```
 
 - Disable Strict Mode (may not be necessary since version 5.6 and above, but no harm in doing so) - comment out line 106:
 
-```
+```ini
 # sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
 ```
 
 - Set the maximum number of connections - default is too low, this should be (Tomcat thread pool \* 2)+1 - line 135:
 
-```
+```ini
 max_connections=181
 ```
 
 - Increase the maximum packet size to 512MB (database restores can fail and sometimes you can't capture printers with Casper Admin) - line 287:
 
-```
+```ini
 max_allowed_packet=512M
 ```
 
 Finally, restart the MYSQL57 service (click Start, Administrative Tools, then launch the Services application to find it).
 
 # Recreating the JSS database and restoring it from the backup
-
- 
 
 Now that we have a brand new MySQL Server 5.7 installation, it won't have a database for the JSS yet. We essentially need to follow the same process as if we were setting up a brand new JSS on a new server, starting with creating the database itself:
 
@@ -178,13 +176,13 @@ Now let's create that database. This is documented in Jamf's installation guides
 
 Issue the following command to create the database:
 
-```
+```sql
 CREATE DATABASE jamfsoftware;
 ```
 
 Next, add a GRANT to allow our jamfsoftware MySQL user on the same server access to it (**change 'password' to the jamfsoftware account password you created earlier**):
 
-```
+```sql
 GRANT ALL ON jamfsoftware.* TO 'jamfsoftware'@localhost IDENTIFIED BY 'password';
 ```
 
@@ -210,7 +208,7 @@ This will take a little while - in my case it took about 10 minutes.
 
 Close the Database Utility and launch a new Command Prompt. Issue the following command, then enter your MySQL root password when prompted:
 
-```
+```bat
 "c:\Program Files\MySQL\MySQL Server 5.7\bin\mysqlcheck.exe" -u root -p --auto-repair --optimize jamfsoftware
 ```
 

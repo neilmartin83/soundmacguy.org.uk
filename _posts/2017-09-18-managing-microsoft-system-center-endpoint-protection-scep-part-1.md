@@ -30,7 +30,7 @@ The preference file is here:
 
 If you run **scep\_set --help** you'll get this:
 
-```
+```bash
 Usage: scep_set [OPTIONS..] [COMMAND]
 System Center Endpoint Protection Configuration modifier
 
@@ -64,7 +64,7 @@ Unfortunately, with exception of the scheduler, SCEP's default settings aren't s
 
 If you venture into the **Preferences, Real-Time Protection** tab and leave **Scan on:** **File creation** ticked (not the other options), you'll see this appear in **scep.cfg**:
 
-```
+```ini
 [fac]
 event_mask = "create"
 
@@ -76,7 +76,7 @@ event_mask = "create"
 
 So that's the setting if we only want to enable real-time (on access) scanning when files are created. Similarly, if we wished to enable all three options of **File creation**, **File execution**, and **File open**, here's what the setting would look like:
 
-```
+```ini
 event_mask = "open:create:exec"
 ```
 
@@ -84,20 +84,20 @@ So we can use **scep\_set** to modify this!
 
 To set real-time scanning to **File creation** only, using **scep\_set**, you'd do this (remembering to begin with the full path to the **scep\_set** binary - I've omitted it here for readability):
 
-```
+```bash
 scep_set --section=fac 'event_mask="create"'
 ```
 
 Then reload SCEP's Launch Daemon which will restart SCEP with the setting applied:
 
-```
+```bash
 launchctl unload -wF /Library/LaunchDaemons/com.microsoft.scep_daemon.plist
 launchctl load -wF /Library/LaunchDaemons/com.microsoft.scep_daemon.plist
 ```
 
 Here are some further examples that will disable scanning "Potentially unwanted" and "Potentially unsafe" applications (what this terminology actually means is documented in SCEP's online help, if you're interested):
 
-```
+```bash
 scep_set --section=fac 'av_scan_app_unwanted = no'
 scep_set --section=fac 'av_scan_app_unsafe = no'
 ```
@@ -110,20 +110,20 @@ Discovering a specific setting in **scep.cfg** is just a case of changing it i
 
 As above, it's easiest to configure an exclusion in SCEP's preferences dialog then extract it from **scep.cfg**. Exclusions are in the **\[global\]** section, for example, if we want to exclude everything in the **Applications** folder it would look like this:
 
-```
+```ini
 [global]
 av_exclude = "/Applications/*.*::"
 ```
 
 With the **scep\_set** command looking like:
 
-```
+```bash
 scep_set --section=global 'av_exclude = "/Applications/*.*::"'
 ```
 
 Excluding multiple paths (e.g. the Applications and Users folders) would look like this in **scep.cfg**, with each path separated by a pair of colons:
 
-```
+```ini
 av_exclude = "/Applications/*.*::/Users/*.*::"
 ```
 
@@ -137,7 +137,7 @@ By the way, I'm not implying that you should (or shouldn't) exclude either of th
 
 Under the bonnet, SCEP has a scheduler that can do all sorts of things (I listed the stuff it does out of the box earlier). Again, the easiest way to figure out what to feed **scep\_set** is to create schedules in the GUI. In **scep.cfg**, scheduled tasks live in the **\[global\]** section and all tasks are consolidated in a single line. If we only had the **Log maintenance** task, it would look like this:
 
-```
+```ini
 [global]
 scheduler_tasks = "1;Log maintenance;;0;0 3 * * * *;@logs;"
 ```
@@ -146,7 +146,7 @@ Breaking it down we have **1** (task number - not visible in the GUI), **Log 
 
 To configure the above task with **scep\_set**:
 
-```
+```bash
 scep_set --section=global 'scheduler_tasks = "1;Log maintenance;;0;0 3 * * * *;"'
 ```
 
@@ -154,7 +154,7 @@ scep_set --section=global 'scheduler_tasks = "1;Log maintenance;;0;0 3 * * * *;"
 
 By default, SCEP includes some out-of-the-box tasks to scan files at system startup/user logon and perform a full scan every week. The (very long) setting in **scep.cfg** looks like this - I've colour-coded each task to make them easier to separate:
 
-```
+```ini
 scheduler_tasks = "1;Log maintenance;;0;0 3 * * * *;@logs;3;Startup file check;disabled;0;login;@sscan lowest;4;Startup file check;disabled;0;engine;@sscan lowest;20;Weekly scan;;;0 2 * * * 1;@uscan scan_deep:/;64;Regular automatic update;;;repeat 60;@update;66;Automatic update after user logon;;;login 60;@update;"
 ```
 
@@ -166,7 +166,7 @@ To delete an unwanted task (e.g. the Weekly scan), you'd **delete** the followin
 
 Then, incorporate the new line into a **scep\_set** command:
 
-```
+```bash
 scep_set --section=global 'scheduler_tasks = "1;Log maintenance;;0;0 3 * * * *;@logs;3;Startup file check;disabled;0;login;@sscan lowest;4;Startup file check;disabled;0;engine;@sscan lowest;64;Regular automatic update;;;repeat 60;@update;66;Automatic update after user logon;;;login 60;@update;"'
 ```
 
@@ -176,7 +176,7 @@ Hopefully, this will give you the gist of getting to grips with discovering SCEP
 
 I recommend configuring SCEP with a script, run as root, following installation (e.g. a Munki postinstall or an _After_ script in a Jamf Pro policy would work). Here's an example of such a script that also includes creating the **scep.cfg** file (as it isn't present immediately after installation but needs to be) and unloading/reloading the Launch Daemon at the right times (I also allowed some delay time to let SCEP fully launch):
 
-https://gist.github.com/neilmartin83/17caf6583bd43213a115a7ffe46777ca
+{% gist 17caf6583bd43213a115a7ffe46777ca %}
 
 Note that enabling/disabling these things _could_ pose a risk to the security of your environment. Don't blindly copy my settings; _carefully_ _consider_ every setting you wish to change for yourself. I'm not responsible if you get infested with viruses/malware or get in trouble with your IT security/infosec people!
 

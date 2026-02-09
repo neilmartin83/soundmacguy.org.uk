@@ -39,27 +39,27 @@ Run these commands as root:
 
 1. Install the NFS server goodness:
     
-    ```
-    apt-get install nfs-kernel-server
-    ```
+```bash
+apt-get install nfs-kernel-server
+```
     
 2. Create a symbolic link of wherever your NBIs live (on my server they're in /usr/local/docker/nbi) to /nbi
     
-    ```
-    ln -s /usr/local/docker/nbi /nbi
-    ```
+```bash
+ln -s /usr/local/docker/nbi /nbi
+```
     
 3. Serve up your /nbi directory by editing the /etc/exports file:
     
-    ```
-    echo "/nbi *(async,ro,no_root_squash,insecure)" >> /etc/exports
-    ```
+```bash
+echo "/nbi *(async,ro,no_root_squash,insecure)" >> /etc/exports
+```
     
 4. Restart the NFS service:
     
-    ```
-    service nfs-kernel-server restart
-    ```
+```bash
+service nfs-kernel-server restart
+```
     
 5. Check that NFS is working properly - It's easy on a Mac: In **Finder**, click the **Go** menu, choose **Connect to Server...** and enter the URL: **nfs://your.server.ip.address/nbi** - you should be able to see your NetBoot images.
 6. Configure BSDPy: Change these options and restart it (this assumes you've followed Graham's guide - otherwise it shouldn't be too difficult to work things out in your environment):

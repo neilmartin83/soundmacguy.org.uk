@@ -22,7 +22,7 @@ At this point, I give a well-deserved nod to the open source application [NoMAD]
 
 [The good stuff is in here](https://gitlab.com/Mactroll/NoMAD/blob/Experimental/NoMAD/GetHelp.swift), the Swift class that deals with the Get Help menu item. The Bomgar specific stuff is this:
 
-```
+```swift
 cliTask("curl -o /tmp/BomgarClient " + myURL )
 cliTaskNoTerm("/usr/bin/unzip -o -d /tmp /tmp/BomgarClient")
 cliTask("/usr/bin/open /tmp/Bomgar/Double-Click\\ To\\ Start\\ Support\\ Session.app")
