@@ -17,7 +17,7 @@ The Time Server payload sits in the **com.apple.MCX** preference domain and it 
 
 It turns out you can indeed specify multiple time servers if you separate them with a comma. For example, to set **uel.ac.uk** and **time.euro.apple.com** the key/value pair would look like this:
 
-```
+```xml
 <key>timeServer</key>
 <string>myserver.myorg.com,time.euro.apple.com</string>
 ```
@@ -28,14 +28,14 @@ What's this profile payload actually doing? It's modifying **/etc/ntp.conf** di
 
 If you **cat** out the file, you can see what it looks like before the profile is applied, with no change from the "out of the box" setting:
 
-```
+```bash
 $ cat /etc/ntp.conf 
 server time.euro.apple.com.
 ```
 
 And here's what it looks like after the profile is installed:
 
-```
+```bash
 $ cat /etc/ntp.conf 
 server myserver.myorg.com
 server time.euro.apple.com
@@ -47,16 +47,16 @@ Also note that in **System Preferences**, as well as the server addresses being 
 
 That means it's not possible to change this setting here. If it was previously disabled, it will be locked in that state. That may cause headaches. However, it is still possible to toggle it using the **systemsetup** command:
 
-```
+```bash
 /usr/sbin/systemsetup -setusingnetworktime on
 ```
 
 and
 
-```
+```bash
 /usr/sbin/systemsetup -setusingnetworktime off
 ```
 
 Finally, here's an example configuration profile you might want to modify/use in your environment:
 
-https://gist.github.com/neilmartin83/4d946f80b0ec54df841b2edfb07ba90d
+{% gist 4d946f80b0ec54df841b2edfb07ba90d %}

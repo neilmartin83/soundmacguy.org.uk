@@ -35,7 +35,7 @@ Set it to **TRUE** and you're done!
 
 Here's a Configuration Profile that would do it:
 
-https://gist.github.com/neilmartin83/250e2e7a959b03fd1076a868959635da
+{% gist 250e2e7a959b03fd1076a868959635da %}
 
 As a footnote, another way to avoid this dialog would be to switch to network based directory accounts. However, that would mean that the Mac must always be able to reach your directory service in order for users to log in, since network accounts aren't cached (even if their home areas are local and do persist on disk).
 

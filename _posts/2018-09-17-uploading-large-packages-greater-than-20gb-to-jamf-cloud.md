@@ -28,7 +28,7 @@ The DMG spec allows for segmenting a disk image into smaller parts (or chunks) f
 
 Assume you have a big DMG, called **"25-gb-original.dmg"** sitting in your /var/tmp directory. Of course this is an example file name and path - yours could be anything. Run this command:
 
-```
+```bash
 hdiutil segment -segmentSize 5G -o /var/tmp/segmented /var/tmp/25-gb-original.dmg
 ```
 
@@ -72,7 +72,7 @@ Upload your resulting 5GB PKG packages to your JCDS with Jamf Admin or the web i
 
 The above policy will get your multi-part DMG onto your clients. What you do from there (or how you indeed profit) depends on what your DMG contains (running the vendor's installer, or using the **installer** command to install that large package inside etc), but it will probably involve a script and start by mounting the DMG, by doing something like this:
 
-```
+```bash
 hdiutil attach /var/tmp/segmented-dmg.dmg
 ```
 
@@ -82,7 +82,7 @@ The rest is up to you!
 
 For disk images that contain _many_ installer packages (PKGs), the wonderful [InstallPKG](https://github.com/henri/installpkg) tool is a Godsend. I deploy it to all the Macs I manage. InstallPKG will mount the DMG and install every PKG inside it with _one_ command - so using **hdiutil** is not necessary:
 
-```
+```bash
 installpkg -ih /var/tmp/segmented-dmg.dmg
 ```
 

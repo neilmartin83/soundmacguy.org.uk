@@ -9,8 +9,6 @@ Whilst perusing the [Slack](https://macadmins.herokuapp.com/), as you do, a post
 
 To my surprise, I couldn't find much in terms of an aggregated listing online (probably more to do with my rubbish search skills), so I set up a [GitHub repo](https://github.com/neilmartin83/all-the-macadmin-conference-videos), listing conference video feeds/pages, as well as those from local meetups - which don't get as much exposure and can be a great source of hidden gems.
 
-https://github.com/neilmartin83/all-the-macadmin-conference-videos
-
 It's nothing fancy, just a Readme.md page.
 
 Fill your boots (and brains).
