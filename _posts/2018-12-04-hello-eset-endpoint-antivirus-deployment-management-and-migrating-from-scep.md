@@ -11,15 +11,15 @@ It's been difficult to find a central repository of information around how to mi
 
 ## Getting started
 
-Firstly, visit https://www.eset.com/int/scep/ and fill out the form to get your year's worth of licenses. It's worth creating an account at http://eba.eset.com as well to keep your license details centrally stored and managed.
+Firstly, visit [https://www.eset.com/int/scep/](https://www.eset.com/int/scep/) and fill out the form to get your year's worth of licenses. It's worth creating an account at http://eba.eset.com as well to keep your license details centrally stored and managed.
 
-The next place you'll get pushed to is here, which has instructions on how to apply your license to the installer package using ESET's **add\_token** tool: https://support.eset.com/kb7026/ - and it tries to steer you to download the full-fat Endpoint Security product that includes a firewall amongst other things.
+The next place you'll get pushed to is here, which has instructions on how to apply your license to the installer package using ESET's **add\_token** tool: [https://support.eset.com/kb7026/](https://support.eset.com/kb7026/) - and it tries to steer you to download the full-fat Endpoint Security product that includes a firewall amongst other things.
 
 Interestingly, inside the application bundle, in /Contents/MacOS, we find a similar set of binaries that are in the same place with SCEP - our old friends **scep\_set**, **scep\_daemon** and so on are replaced with **esets\_set** and **esets\_daemon** etc. These may be useful...
 
 ### What if I just want the Antivirus product, like SCEP?
 
-Fear not, just grab ESET Endpoint Antivirus for Mac here: https://support.eset.com/kb3614/
+Fear not, just grab ESET Endpoint Antivirus for Mac here: [https://support.eset.com/kb3614/](https://support.eset.com/kb3614/)
 
 It's much closer to SCEP's level of functionality.  The **add\_token** tool works on this package too, so you can apply your license to it in the same way. The rest of this blog post will talk specifically about experiences with ESET Endpoint Antivirus for Mac.
 
@@ -60,7 +60,7 @@ chmod +x /path/to/add_token
 
 ESET provide **ESET Remote Administrator** which can remotely configure and manage ESET Endpoint Antivirus and Cyber Security. You do have to download and provision it on your own server (and they also provide a ready-made Azure VM).
 
-If you're interested in setting ERA up and using it, check out https://support.eset.com/kb5982/
+If you're interested in setting ERA up and using it, check out [https://support.eset.com/kb5982/](https://support.eset.com/kb5982/)
 
 The rest of this post assumes you're not going to use ERA and that you wish to deploy and configure things with your own management tool of choice.
 
@@ -184,7 +184,7 @@ This is functionally identical to SCEP's **scep\_daemon**, which [I cover in lo
 
 I've written some Jamf Pro Extension Attributes that leverage this and they're available in my GitHub repo, here:
 
-https://github.com/neilmartin83/Jamf-Pro-Extension-Attributes
+[https://github.com/neilmartin83/Jamf-Pro-Extension-Attributes](https://github.com/neilmartin83/Jamf-Pro-Extension-Attributes)
 
 So far, I've made EA's for the following:
 
@@ -213,4 +213,4 @@ Thank you to the following people who provided nuggets of information, encourage
 - Steve Maser (@stevemaser on the Slack)
 - Jon Crain (@joncrain on the Slack)
 - David Whiteley (@deej on the Slack)
-- The folks in this thread on the ESET forums: https://forum.eset.com/topic/17688-eset-endpoint-antivirus-is-not-configurable/
+-- The folks in this thread on the ESET forums: [https://forum.eset.com/topic/17688-eset-endpoint-antivirus-is-not-configurable/](https://forum.eset.com/topic/17688-eset-endpoint-antivirus-is-not-configurable/)
