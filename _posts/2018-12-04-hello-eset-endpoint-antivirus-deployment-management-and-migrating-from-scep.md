@@ -5,7 +5,7 @@ date: 2018-12-04
 coverImage: "eset.png"
 ---
 
-Following Microsoft's [announcement](https://soundmacguy.wordpress.com/2018/11/15/farewell-scep/) that System Centre Endpoint Protection (SCEP) for macOS and Linux is to be discontinued by the end of this year, their recommended migration path is to switch to ESET Cyber Security. In fact, ESET are granting anyone wishing to switch a year's subscription for free, which is nice.
+Following Microsoft's [announcement](/2018/11/15/farewell-scep.html) that System Centre Endpoint Protection (SCEP) for macOS and Linux is to be discontinued by the end of this year, their recommended migration path is to switch to ESET Cyber Security. In fact, ESET are granting anyone wishing to switch a year's subscription for free, which is nice.
 
 It's been difficult to find a central repository of information around how to migrate, what the options are and how to deploy and configure ESET. Things seem to be scattered around forum posts, knowledge base articles, or behind a wall of reverse engineering and poking. So let's have a look (with a Jamf-twist although these things should be possible with other popular deployment tools)...<!--more-->
 
@@ -25,7 +25,7 @@ It's much closer to SCEP's level of functionality.  The **add\_token** tool wor
 
 Note: the article above doesn't mention that when you download **add\_token**, you need to set it to be executable in order for it to actually run - so do this once you've unzipped it:
 
-```
+```bash
 chmod +x /path/to/add_token
 ```
 
@@ -48,9 +48,10 @@ chmod +x /path/to/add_token
     - **LiveGrid** (Uploads information/files that are found to be infected or suspicious to ESET) - enabled by default
 - The installer package appears to work fine when invoked via the command line (i.e. installer command) or deployed through management tools like Jamf. It's very similar to SCEP's one.
 - If you don't want the GUI to start straight after installation (e.g if you want to configure it first - see below), the following file must be present before installation begins:
-    - ```
-        /Library/Application Support/ESET/esets/cache/do_not_launch_esets_gui_after_installation
-        ```
+
+```bash
+/Library/Application Support/ESET/esets/cache/do_not_launch_esets_gui_after_installation
+```
         
 - If you're deploying to macOS 10.13 or 10.14 (High Sierra/Mojave), bear in mind this comes with a kernel extension you'll need to whitelist or your users will have to allow it manually during installation. The Team ID to whitelist is **P8DQRXPVLP.**
 - If you're deploying to macOS 10.14, you need to allow ESET full disk access. See [this post](https://soundmacguy.wordpress.com/2019/01/23/eset-endpoint-antivirus-privacy-preferences-policy-control/) for more details.
@@ -71,11 +72,11 @@ You have a couple of ways to activate your license; you could use the **add\_to
 
 Alternatively, you can use **esets\_daemon** afterwards. This is particularly useful if you need to re-activate when your license has expired:
 
-```
+```bash
 esets_daemon --wait-respond --activate key=XXXX-XXXX-XXXX-XXXX-XXXX
 ```
 
-Where XXX-XXXX-XXXX-XXXX-XXXX is substituted with your activation key.
+Where `XXX-XXXX-XXXX-XXXX-XXXX` is substituted with your activation key.
 
 System/computer level settings are set in the following areas (from ESET's preferences dialog):
 
@@ -104,19 +105,19 @@ For step 4, you can export your settings from the Setup pane in the GUI:
 
 Alternatively, you can use **esets\_daemon**:
 
-```
+```bash
 esets_daemon --export-settings /path/to/settings/file
 ```
 
 To import the settings using **esets\_daemon**, do this:
 
-```
+```bash
 esets_daemon --import-settings /path/to/settings/file
 ```
 
 It is important to note that you should unload ESET's Launch Daemon and ensure the GUI is not running when you import (if the GUI is running and loses contact with the Launch Daemon, it will interrupt the user with a very scary dialog):
 
-```
+```bash
 killall esets_gui
 launchctl unload "/Library/LaunchDaemons/com.eset.esets_daemon.plist"
 esets_daemon --import-settings /path/to/settings/file
@@ -151,35 +152,35 @@ As I use Jamf, I have a policy which does the following:
 2. Install a package containing my exported settings
 3. Run the following script:
 
-https://gist.github.com/neilmartin83/5d0a3845dd4abbfdff244ac21dae6900
+{% gist 5d0a3845dd4abbfdff244ac21dae6900 %}
 
 Let's break that down:
 
-Lines 3-11: Variables you should change to suit your environment (descriptions are provided in the script).
+**Lines 3-11**: Variables you should change to suit your environment (descriptions are provided in the script).
 
-Lines 17-23: If we're using our own GUI settings, this prevents the installer launching the GUI after installation.
+**Lines 17-23**: If we're using our own GUI settings, this prevents the installer launching the GUI after installation.
 
-Lines 25-26: Install it.
+**Lines 25-26**: Install it.
 
-Lines 28-31: Import your exported configuration file.
+**Lines 28-31**: Import your exported configuration file.
 
-Lines 33-92: Generate our "master" per-user GUI settings file. You could copy and paste the contents of your own gui.cfg file here (lines 40-91).
+**Lines 33-92**: Generate our "master" per-user GUI settings file. You could copy and paste the contents of your own gui.cfg file here (lines 40-91).
 
-Lines 93-109: Generate a script and make it executable - this is intended to run as the logged in user and will copy over the master gui.cfg file (unless previously copied) and open the ESET Endpoint Antivirus application itself.
+**Lines 93-109**: Generate a script and make it executable - this is intended to run as the logged in user and will copy over the master gui.cfg file (unless previously copied) and open the ESET Endpoint Antivirus application itself.
 
-Lines 110-129: Overwrite the installed Launch Agent with our own that runs the script generated above. This ensures that every new user that logs in gets our GUI settings and not the defaults.
+**Lines 110-129**: Overwrite the installed Launch Agent with our own that runs the script generated above. This ensures that every new user that logs in gets our GUI settings and not the defaults.
 
-Lines 131-139: If there is a user logged in, configure the GUI application and launch it, in their context (i.e. as them). This portion of the script will not run if no user is logged in.
+**Lines 131-139**: If there is a user logged in, configure the GUI application and launch it, in their context (i.e. as them). This portion of the script will not run if no user is logged in.
 
 ## Reporting (here, have some Extension Attributes)
 
 It is possible to obtain a lot of useful information from **esets\_daemon** with:
 
-```
+```bash
 esets_daemon --status
 ```
 
-This is functionally identical to SCEP's **scep\_daemon**, which [I cover in lots of detail in this post](https://soundmacguy.wordpress.com/2018/04/07/microsoft-system-center-endpoint-protection-scep-more-hidden-reporting-goodness/).
+This is functionally identical to SCEP's **scep\_daemon**, which [I cover in lots of detail in this post](/2018/04/07/microsoft-system-center-endpoint-protection-scep-more-hidden-reporting-goodness.html).
 
 I've written some Jamf Pro Extension Attributes that leverage this and they're available in my GitHub repo, here:
 

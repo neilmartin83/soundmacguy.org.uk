@@ -27,13 +27,13 @@ If you're not using [Autopkg](https://github.com/autopkg/autopkg) already, why o
 
 Add my recipe repository:
 
-```
+```bash
 autopkg repo-add neilmartin83-recipes
 ```
 
 Make the package:
 
-```
+```bash
 autopkg run AdobeExpiryCheck.pkg
 ```
 
