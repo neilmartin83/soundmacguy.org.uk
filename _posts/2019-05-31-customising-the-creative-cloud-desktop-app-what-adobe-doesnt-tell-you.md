@@ -19,25 +19,25 @@ You'll find there's more to this once you scratch beneath the surface...
 
 Fast forward to 2019 with the advent of Shared Device Licensing, and we have this option when we're creating a package in the Admin Console:
 
-![](/images/image-5.png)
+![](/assets/2019/05/31/image-5.png)
 
 If we leave it ticked to disable file syncing (which you might want to do for computers that shared by many people, to help performance), users are greeted with this in the **Files** panel of the CCDA:
 
-![](/images/image-6.png)
+![](/assets/2019/05/31/image-6.png)
 
 ### But I want to hide the thing...
 
 Telling folks they don't have access to something because IT said so is a surefire way to annoy them and generate lots of questions. Wouldn't it be better to just remove that panel altogether? Ignorance is bliss, right? It turns out, through some trial and error, that you can. Let's have a look at **ServiceConfig.xml** again, focusing on the **FilesPanel** key:
 
-![](/images/image-8.png)
+![](/assets/2019/05/31/image-8.png)
 
 Notice that **masked** is set to **true**. This _disables_ the panel's functionality but leaves it visible. Now look at the **AppsPanel** key and notice it has a **visible** key, that's set to **false**. Also notice that our CCDA screenshot above is missing its **Apps** panel (which is good for labs!)... A clue. So what if we were to add a **visible** key under **FilesPanel**, like so?
 
-![](/images/image-9.png)
+![](/assets/2019/05/31/image-9.png)
 
 Here's the result when the CCDA is next launched:
 
-![](/images/image-10.png)
+![](/assets/2019/05/31/image-10.png)
 
 Voila, no more **Files** panel!
 
@@ -57,7 +57,7 @@ https://gist.github.com/neilmartin83/ae8f6b6b94af9f335a61f537a2564b79
 
 And the result... lovely and clean:
 
-![](/images/image-11.png)
+![](/assets/2019/05/31/image-11.png)
 
 ### Beware, there be dragons...
 

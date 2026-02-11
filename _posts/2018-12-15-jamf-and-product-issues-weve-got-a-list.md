@@ -15,7 +15,7 @@ Until now, on the [MacAdmins Slack](https://macadmins.herokuapp.com/), we've had
 
 Yesterday, a new unannounced link appeared in your **JamfNation** Account, in the **My** **Assets** section:
 
-![JamfAssets](/images/JamfAssets.png)
+![JamfAssets](/assets/2018/12/15/JamfAssets.png)
 
 [https://www.jamf.com/jamf-nation/my/products/known-issues](https://www.jamf.com/jamf-nation/my/products/known-issues)
 

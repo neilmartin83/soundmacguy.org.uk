@@ -10,7 +10,7 @@ For many, that benchmark may include the need for an antivirus/malware solution 
 
 Or are we?
 
-![scep_logs.png](/images/scep_logs.png)
+![scep_logs.png](/assets/2017/09/26/scep_logs.png)
 
 <!--more-->
 
@@ -36,7 +36,7 @@ grep -A 2 CONTINUOUS_ENGINE1\] "lastupd.ver" | grep versionid | cut -d "=" -f 2
 
 In my case, at the time of writing, this returns the number **16135**. Check out this KB on ESET's website (remember, SCEP for Mac is rebadged ESET!). They update it regularly with the latest definitions version number: [https://support.eset.com/kb3264/](https://support.eset.com/kb3264/)
 
-![eset_version.png](/images/eset_version.png)
+![eset_version.png](/assets/2017/09/26/eset_version.png)
 
 What do you know, it matches!
 
@@ -72,7 +72,7 @@ date -r `grep -A 1 "LastUpdate=" "data.txt" | grep "LastUpdate=" | cut -d "=" -f
 
 The above date's format is perfect for a Jamf Pro Extension Attribute which returns the "Date" Data Type. [Click here to download such an Extension Attribute](https://gist.github.com/neilmartin83/f564f5bf45bc19b3f244825294a0d586)! Because it outputs a date, you can use Smart Group criteria such as "less than x days ago" with it. Here's an example Smart Group you might use to report on whether Macs have the current version of SCEP with a recently updated set of definitions (Application Title is System Center Endpoint Protection.app). This might be used as part of a wider compliance reporting mechanism.
 
-![scep_jss_compliane.png](/images/scep_jss_compliane.png)
+![scep_jss_compliane.png](/assets/2017/09/26/scep_jss_compliane.png)
 
 ## What have the on access and on demand scanners been up to?
 

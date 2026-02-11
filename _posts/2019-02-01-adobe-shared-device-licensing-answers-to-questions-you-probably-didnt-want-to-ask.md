@@ -93,7 +93,7 @@ They don't say _which_ apps though. I'm going to test that soon...
 
 - Premiere Rush CC - if you enable the **Sync with Creative Cloud** option, it complains:
 
-![](/images/image.png)
+![](/assets/2019/02/01/image.png)
 
 ### So there's no Apps panel in the CCDA that comes with my SDL package?
 

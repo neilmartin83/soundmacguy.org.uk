@@ -18,11 +18,11 @@ Frustratingly, this wasn't addressed in the 9.98 update, and [Jamf won't fix it]
 
 **1.** Download your script(s):
 
-![downloadscript](/images/downloadscript.png)
+![downloadscript](/assets/2017/04/05/downloadscript.png)
 
 **2.** Rename it/them to remove the **.sh** extension:
 
-![delsh](/images/delsh.png)
+![delsh](/assets/2017/04/05/delsh.png)
 
 Package them with your tool of choice to make them install in...
 
@@ -30,15 +30,15 @@ Package them with your tool of choice to make them install in...
 /Library/Application Support/JAMF/FirstRun/PostIntall/Resources
 ```
 
-![Screen Shot 2017-04-05 at 11.13.17](/images/screen-shot-2017-04-05-at-11-13-17.png)
+![Screen Shot 2017-04-05 at 11.13.17](/assets/2017/04/05/screen-shot-2017-04-05-at-11-13-17.png)
 
 **3.** Ensure that the package is told to **Install on boot drive after imaging**:
 
 (choose your poison - Casper Admin or the JSS/Settings/Packages)
 
-![casperadminscript](/images/casperadminscript.png)
+![casperadminscript](/assets/2017/04/05/casperadminscript.png)
 
-![jsspkgafter](/images/jsspkgafter.png)
+![jsspkgafter](/assets/2017/04/05/jsspkgafter.png)
 
 Finally, add that package to your Imaging Configuration and be sure to **leave in place any references to the scripts that were there before**. We're just making sure the scripts will be installed where they're expected to be when the Mac does its first restart after Casper Imaging has done its deed.
 

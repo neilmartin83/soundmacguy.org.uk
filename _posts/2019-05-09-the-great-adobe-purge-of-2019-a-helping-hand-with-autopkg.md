@@ -13,7 +13,7 @@ Then read that: [https://helpx.adobe.com/enterprise/kb/remove-unauthorized-versi
 
 Then realise that the macOS "package" Adobe provides is actually a zip file that contains this lot:
 
-![](/images/image.png)
+![](/assets/2019/05/09/image.png)
 
 ...which means admins need to do work to deliver and run this on our endpoints. :-(
 

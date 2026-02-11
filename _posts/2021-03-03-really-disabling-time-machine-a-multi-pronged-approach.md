@@ -13,7 +13,7 @@ If you have something like this in place, or your users use a cloud service like
 
 ## Prong 1 - Don't tell users to back up external drives
 
-![Setup Time Machine - NO LONGER IN USE - Please visit  http://support.hardsoft.co.uk](/images/tm_new_drive.png)
+![Setup Time Machine - NO LONGER IN USE - Please visit  http://support.hardsoft.co.uk](/assets/2021/03/03/tm_new_drive.png)
 
 Ignorance is bliss - if you don't know Time Machine is a thing, then you'll likely never use it.
 

@@ -43,7 +43,7 @@ server time.euro.apple.com
 
 Also note that in **System Preferences**, as well as the server addresses being locked, the **Set date and time automatically** option is also locked after the profile is installed:
 
-![timeserverlock.png](/images/timeserverlock.png)
+![timeserverlock.png](/assets/2018/09/26/timeserverlock.png)
 
 That means it's not possible to change this setting here. If it was previously disabled, it will be locked in that state. That may cause headaches. However, it is still possible to toggle it using the **systemsetup** command:
 

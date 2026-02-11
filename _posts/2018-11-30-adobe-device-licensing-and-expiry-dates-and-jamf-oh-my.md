@@ -7,13 +7,13 @@ coverImage: "adobe-logo1.png"
 
 ### It's all Ben's fault.
 
-![Screen Shot 2018-11-30 at 05.47.04](/images/screen-shot-2018-11-30-at-05-47-04.png)
+![Screen Shot 2018-11-30 at 05.47.04](/assets/2018/11/30/screen-shot-2018-11-30-at-05-47-04.png)
 
 ### The problem:
 
 Adobe device license serial numbers have an expiry date. Adobe have the **[AdobeExpiryCheck](https://helpx.adobe.com/enterprise/kb/volume-license-expiration-check.html)** command line tool you can run that'll tell you if you have a device license serial number and what the expiry date is. This tool returns results that look like this:
 
-![Screen Shot 2018-11-30 at 05.53.15](/images/screen-shot-2018-11-30-at-05-53-151.png)
+![Screen Shot 2018-11-30 at 05.53.15](/assets/2018/11/30/screen-shot-2018-11-30-at-05-53-151.png)
 
 That's a huge load of text and a date that's in a format we might want to change if we were to say, want to make it useful for our management tool of choice. Oh, and the AdobeExpiryCheck tool comes as a zip file download, so isn't really mass-deployment friendly, if we want to get it on our entire fleet of computers.
 
@@ -57,7 +57,7 @@ The **Device License Remaining Days** Extension Attribute could be used in conj
 
 **Computers with Adobe Device Licenses expiring within 60 days:**
 
-![Screen Shot 2018-11-30 at 10.06.31](/images/screen-shot-2018-11-30-at-10-06-31.png)
+![Screen Shot 2018-11-30 at 10.06.31](/assets/2018/11/30/screen-shot-2018-11-30-at-10-06-31.png)
 
 Huge hat-tips to [Ben Toms](https://macmule.com/), [Patric Fergus](http://foigus.wordpress.com/), [Steve Wood](http://www.geekygordo.com/) and [Eric Holtam](https://osxbytes.wordpress.com/) for the inspiration and support.
 

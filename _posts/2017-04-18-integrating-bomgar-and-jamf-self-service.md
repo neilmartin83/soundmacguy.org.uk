@@ -62,7 +62,7 @@ codeName
 
 You can get its value by logging into the admin interface for your Bomgar server, clicking the **CONFIGURATION** menu, then choosing **ISSUES**. Click on the Issue you want to route your sessions to and you'll see its Code Name, like this:
 
-![](/images/bomgarissue.png)
+![](/assets/2017/04/18/bomgarissue.png)
 
 ## A Script fit for Self Service
 

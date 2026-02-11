@@ -9,7 +9,7 @@ coverImage: "largedmg.png"
 
 2019-05-20 Edit: Thanks to Scott Blake (@mscottblake on the Slack), we now know the root cause of this limit is due to Amazon's CloudFront service imposing it. [Click here to read the specifics](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html).
 
-![CFLimit](/images/cflimit.png)
+![CFLimit](/assets/2018/09/17/cflimit.png)
 
 If you're rocking Jamf Cloud, you might be making use of the provided Jamf Cloud Distribution Service (JCDS), or "Cloud Distribution Point" as it's otherwise known. My place recently migrated from an on-premise service, and I've been eager to take advantage of the JCDS. Internet bandwidth is not really an issue and getting rid of our on-premise File Share Distribution Points means we'd claw back 3 servers and 1.5TB of space in total, which is nice.
 

@@ -9,7 +9,7 @@ The Mac Admins community is interesting (amongst other things!). What's really i
 
 @glaurung got in touch with me on the [Slack](https://macadmins.herokuapp.com/) after I published [part 1](https://soundmacguy.wordpress.com/2017/09/18/managing-microsoft-system-center-endpoint-protection-scep-part-1/) and [part 2](https://soundmacguy.wordpress.com/2017/09/26/managing-microsoft-system-center-endpoint-protection-scep-part-2/) of my thoughts on managing SCEP. Here's what he said:
 
-![glaurung.png](/images/glaurung.png)
+![glaurung.png](/assets/2017/11/19/glaurung.png)
 
 This definitely builds on what I've done so far, and after some tinkering, I think I've in turn built on that... Read on!<!--more-->
 
@@ -39,7 +39,7 @@ In this case, following @glaurung's example, we're going to disable the notifica
 
 In the GUI, the preference can be found in the **Update** section, **Advanced Options**:
 
-![scepgui2.png](/images/scepgui2.png)
+![scepgui2.png](/assets/2017/11/19/scepgui2.png)
 
 Looking in **gui.cfg** it's easy to work out the actual preference:
 

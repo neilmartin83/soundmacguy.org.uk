@@ -35,11 +35,11 @@ So they’re essentially separate, different apps now...
 
 The new unified Apps also have different paths on disk but the _display name is the same in Finder_.
 
-![](/images/pages.png)
+![](/assets/2026/01/28/pages.png)
 
-![](/images/keynote.png)
+![](/assets/2026/01/28/keynote.png)
 
-![](/images/numbers.png)
+![](/assets/2026/01/28/numbers.png)
 
 | **Old path** | **New path** |
 | --- | --- |
@@ -75,8 +75,8 @@ Tracking down/deleting the previous iWork apps should be straightforward now we 
 
 As an example, if you're working with Jamf Pro, a Mac Apps record for Keynote (15.1) now looks like this after searching for and adding it:
 
-![](/images/image-3.png)
+![](/assets/2026/01/28/image-3.png)
 
 Compared to the previous version (13.2):
 
-![](/images/image-4.png)
+![](/assets/2026/01/28/image-4.png)

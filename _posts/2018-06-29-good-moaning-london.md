@@ -7,7 +7,7 @@ coverImage: "gm.jpg"
 
 If you've ever been unfortunate enough to stumble into the #london channel on the [MacAdmins Slack](https://macadmins.herokuapp.com/), you may see something like this in the early Greenwich Mean Time hours:
 
-![gm2](/images/gm2.png)
+![gm2](/assets/2018/06/29/gm2.png)
 
 For most uninitiated non-Brits, you'll be forgiven for thinking it's some kind of secret code or cult ritual (actually, maybe it is), so let's de-mistify things.<!--more-->
 

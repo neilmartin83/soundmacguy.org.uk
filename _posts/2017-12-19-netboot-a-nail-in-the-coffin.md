@@ -12,11 +12,11 @@ Apple have updated the following articles:
 
 The following parts stick out in particular:
 
-![nb1.png](/images/nb1.png)
+![nb1.png](/assets/2017/12/19/nb1.png)
 
 ...and...
 
-![nb2.png](/images/nb2.png)
+![nb2.png](/assets/2017/12/19/nb2.png)
 
 I believe NetBoot is no longer possible on an iMac Pro, even if you disable Secure Boot, as outlined here: [https://support.apple.com/en-us/HT208330](https://support.apple.com/en-us/HT208330) - I haven't actually got an iMac Pro to test this on, so if anyone could confirm, that would be fantastic. I'm also not sure if **Internet Recovery** ([https://support.apple.com/en-gb/HT204904](https://support.apple.com/en-gb/HT204904) and [https://support.apple.com/en-gb/HT201314](https://support.apple.com/en-gb/HT201314)) works, but assume it does as Apple haven't updated those articles (yet).
 

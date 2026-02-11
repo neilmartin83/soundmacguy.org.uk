@@ -246,19 +246,19 @@ For more information on available arguments, run:
 
 Here's an example of the parameters when they're filled out:
 
-![](/images/image.png)
+![](/assets/2020/06/14/image.png)
 
 And here's some example output from the policy log, after a successful run:
 
-![](/images/image-1.png)
+![](/assets/2020/06/14/image-1.png)
 
 A new bookmark will be created in Microsoft Remote Desktop, configured with your specified settings:
 
-![](/images/image-3.png)
+![](/assets/2020/06/14/image-3.png)
 
-![](/images/image-4.png)
+![](/assets/2020/06/14/image-4.png)
 
-![](/images/image-5.png)
+![](/assets/2020/06/14/image-5.png)
 
 ### Delete a bookmark
 
@@ -270,7 +270,7 @@ Use this to delete all bookmarks with the specified friendly or host name. Bewar
 
 Here's an example of the policy log, following a successful run:
 
-![](/images/image-2.png)
+![](/assets/2020/06/14/image-2.png)
 
 ## Further learnings...
 

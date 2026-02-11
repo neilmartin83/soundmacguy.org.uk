@@ -7,11 +7,11 @@ coverImage: "spinal_tap_-_up_to_eleven.jpg"
 
 On May 13th, [Apple released Logic Pro 11.](https://www.apple.com/uk/newsroom/2024/05/logic-pro-takes-music-making-to-the-next-level-with-new-ai-features) This marks the first major update to one of the most popular digital audio workstation tools since 2013 - that was 11 years ago! And with new updates come new behaviours that might cause issues in environments where that software is deployed and managed. Logic Pro 11 is no exception and on first launch, we're greeted with a new welcome screen:
 
-![](/images/screenshot-2024-05-15-at-00.45.41.png)
+![](/assets/2024/05/15/screenshot-2024-05-15-at-00.45.41.png)
 
 This is in addition to this dialog which has been around in previous versions, and can be suppressed (details below if that's not something you're familiar with...):
 
-![](/images/screenshot-2024-05-15-at-00.45.16.png)
+![](/assets/2024/05/15/screenshot-2024-05-15-at-00.45.16.png)
 
 We will assume you're deploying additional content with a tool such as the fantastic [loopdown](https://github.com/carlashley/loopdown) so won't cover the specifics of that here. But for the record, in my testing, loopdown will download and install the entire library for Logic Pro 11 without anything missing.
 

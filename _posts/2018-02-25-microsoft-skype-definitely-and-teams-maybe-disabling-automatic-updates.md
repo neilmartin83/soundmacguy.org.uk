@@ -7,7 +7,7 @@ coverImage: "teamsskypesquirrel.png"
 
 With version 8.x of Skype and since the debut of Teams, Microsoft have been using the [Squirrel](https://github.com/Squirrel/Squirrel.Mac) framework to manage automatic updates of these applications. This is undesirable in lab/managed environments where users typically aren't local administrators, as they're often presented with a dialog like this, which they can't do much with, other than ask IT for help:
 
-![SquirrelUpdate](/images/squirrelupdate.png)
+![SquirrelUpdate](/assets/2018/02/25/squirrelupdate.png)
 
 If we're packaging and deploying these applications (which we normally would be in the environments we manage), then they're usually owned by root and can't be modified by standard user accounts. So, what is an admin to do?<!--more-->
 
@@ -33,7 +33,7 @@ Thanks also to Rick Heil for the [idea](https://rickheil.com/disabling-auto-upda
 
 You can tell if an application uses the Squirrel framework by **ctrl+clicking** it, choosing **Show Package Contents**, then looking inside:
 
-![SkypeSquirrel](/images/skypesquirrel.png)
+![SkypeSquirrel](/assets/2018/02/25/skypesquirrel.png)
 
 Note that I have tested/verified that this works with Skype, which seems to check for and download updates on every launch. Teams seems to check for updates 15 minutes after launch, then every 45 minutes (or does it?), if you take a peek at line 54234 and beyond in **/Applications/Microsoft Teams.app/Resources/app.asar**:
 

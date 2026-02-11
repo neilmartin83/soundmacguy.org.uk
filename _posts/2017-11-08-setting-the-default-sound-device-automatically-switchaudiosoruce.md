@@ -16,7 +16,7 @@ Using **switchaudiosource** is easy and it gives good feedback. Type the comma
 switchaudiosource
 ```
 
-![sas1.png](/images/sas1.png)
+![sas1.png](/assets/2017/11/08/sas1.png)
 
 List all audio devices currently connected:
 
@@ -24,7 +24,7 @@ List all audio devices currently connected:
 switchaudiosource -a
 ```
 
-![sas2.png](/images/sas2.png)
+![sas2.png](/assets/2017/11/08/sas2.png)
 
 Set the output device to something specific, using a name from the list above (in this example, our RME RayDAT card - what an awesome bit of kit!):
 
@@ -32,7 +32,7 @@ Set the output device to something specific, using a name from the list above (i
 switchaudiosource -s "HDSPe RayDAT (23635536)"
 ```
 
-![sas3.png](/images/sas3.png)
+![sas3.png](/assets/2017/11/08/sas3.png)
 
 Set the input device to something specific:
 
@@ -40,7 +40,7 @@ Set the input device to something specific:
 switchaudiosource -t input -s "HDSPe RayDAT (23635536)"
 ```
 
-![sas4.png](/images/sas4.png)
+![sas4.png](/assets/2017/11/08/sas4.png)
 
 Tell us the current default device:
 
@@ -48,7 +48,7 @@ Tell us the current default device:
 switchaudiosource -c
 ```
 
-![sas5.png](/images/sas5.png)
+![sas5.png](/assets/2017/11/08/sas5.png)
 
 # Scripting switchaudiosource
 
@@ -62,6 +62,6 @@ Because I use **switchaudiosource** in a few different spaces that use differen
 
 {% gist f57ccea6c38b6c9cc102254b2a1e0008 %}
 
-![sas7.png](/images/sas7.png)
+![sas7.png](/assets/2017/11/08/sas7.png)
 
 That way, I only need one script in my Jamf Pro Server.

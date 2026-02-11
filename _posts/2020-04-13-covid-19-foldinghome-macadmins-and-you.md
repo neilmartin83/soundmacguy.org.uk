@@ -27,7 +27,7 @@ Yes. If deploying this across your fleet of Macs tickles your pickle, read on...
 
 <figure>
 
-![](/images/image.png)
+![](/assets/2020/04/13/image.png)
 
 <figcaption>
 
@@ -52,7 +52,7 @@ Vendors take note, this is a great example of how packaging your applications [s
 
 The client runs a local web server on port **7396** where you can see more information about the current Work Unit being processed, as well as configure some basic settings. Security-wise, the web server only accepts connections from **localhost** (the computer it's running on). Trying to connect to it from a different computer on the same network will yield a 403 error.
 
-![](/images/image-1.png)
+![](/assets/2020/04/13/image-1.png)
 
 ## What about mass-configuring it?
 

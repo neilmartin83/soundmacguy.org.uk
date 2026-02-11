@@ -26,7 +26,7 @@ resource "axm_device_management_service" "example" {
 }
 ```
 
-![](/images/image-1.png)
+![](/assets/2025/06/18/image-1.png)
 
 One example could be to use this in conjunction with the awesome [jamfpro](https://registry.terraform.io/providers/deploymenttheory/jamfpro/latest/docs) provider. You can enforce device assignments to the MDM Service(s) your Jamf Pro instance is using in the Apple Business/School Manager end itself.
 

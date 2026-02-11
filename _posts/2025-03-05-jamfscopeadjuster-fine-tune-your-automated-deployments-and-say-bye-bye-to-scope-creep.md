@@ -146,11 +146,11 @@ You will get a copy of the processed XML file in your recipe cache directory. Th
 
 Before:
 
-![](/images/image.png)
+![](/assets/2025/03/05/image.png)
 
 After:
 
-![](/images/image-1.png)
+![](/assets/2025/03/05/image-1.png)
 
 ### Apply more than one scope adjustment to an existing object
 

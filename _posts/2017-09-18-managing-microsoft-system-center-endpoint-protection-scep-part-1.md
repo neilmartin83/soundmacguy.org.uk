@@ -60,7 +60,7 @@ For managing individual settings, all we're really interested in is using **sce
 
 Unfortunately, with exception of the scheduler, SCEP's default settings aren't stored in **scep.cfg** so how are we supposed to know _what_ to set? The best method is to change something in SCEP's preferences dialog and compare the contents of **scep.cfg** before and after. For example, only allowing scanning files when they're created alleviates a considerable performance bottleneck:
 
-![scep_realtime.png](/images/scep_realtime.png)
+![scep_realtime.png](/assets/2017/09/18/scep_realtime.png)
 
 If you venture into the **Preferences, Real-Time Protection** tab and leave **Scan on:** **File creation** ticked (not the other options), you'll see this appear in **scep.cfg**:
 
@@ -106,7 +106,7 @@ Discovering a specific setting in **scep.cfg** is just a case of changing it i
 
 ## Configuring Exclusions
 
-![scep_exclusions.png](/images/scep_exclusions.png)
+![scep_exclusions.png](/assets/2017/09/18/scep_exclusions.png)
 
 As above, it's easiest to configure an exclusion in SCEP's preferences dialog then extract it from **scep.cfg**. Exclusions are in the **\[global\]** section, for example, if we want to exclude everything in the **Applications** folder it would look like this:
 
@@ -133,7 +133,7 @@ By the way, I'm not implying that you should (or shouldn't) exclude either of th
 
 ## Configuring Scheduling
 
-![scep_scheduler.png](/images/scep_scheduler.png)
+![scep_scheduler.png](/assets/2017/09/18/scep_scheduler.png)
 
 Under the bonnet, SCEP has a scheduler that can do all sorts of things (I listed the stuff it does out of the box earlier). Again, the easiest way to figure out what to feed **scep\_set** is to create schedules in the GUI. In **scep.cfg**, scheduled tasks live in the **\[global\]** section and all tasks are consolidated in a single line. If we only had the **Log maintenance** task, it would look like this:
 

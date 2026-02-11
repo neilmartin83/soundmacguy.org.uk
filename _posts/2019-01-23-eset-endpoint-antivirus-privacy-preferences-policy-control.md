@@ -7,7 +7,7 @@ coverImage: "eset.png"
 
 A quick one - if you're deploying ESET Endpoint Antivirus or Security to Macs running macOS 10.14.x Mojave, you (or your users!) will have encountered this dialog:
 
-![](/images/image.png)
+![](/assets/2019/01/23/image.png)
 
 To compound the problem, if you follow the instructions in that dialog and you're not logged in as a local administrator, you'll soon hit a roadblock.
 
@@ -24,7 +24,7 @@ The answer is pretty simple, yet not:
 
 I used Jamf's marvellous [PPPC Utility](https://github.com/jamf/PPPC-Utility) to make a quick profile and upload it to my Jamf Pro Server. Just drag the ESET Endpoint Antivirus or Security app into it and select **Allow** for the **All Files** permission. Then save your profile and deploy with your MDM of choice, or if you have Jamf, upload it directly to your Jamf Pro Server (that feature is particularly nice!). Here's what PPPC Utility should look like if you've set things up properly:
 
-![](/images/eset.png)
+![](/assets/2019/01/23/eset.png)
 
 [Click here](https://github.com/neilmartin83/configuration_profiles/blob/master/System%20-%20Privacy%20Preferences%20Policy%20Control%20-%20ESET%20Endpoint%20Antivirus.mobileconfig) for an example Configuration Profile for ESET Endpoint Antivirus that you can use with your MDM, if you like.
 

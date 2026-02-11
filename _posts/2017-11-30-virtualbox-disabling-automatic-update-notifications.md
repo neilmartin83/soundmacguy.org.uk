@@ -15,7 +15,7 @@ Seeing _this_ when you launch an application is the scourge of anyone who mana
 
 If you've ever installed VirtualBox, you'll know it's frequently updated, and it checks for new versions on launch, displaying an informative message when one is available. Not ideal. And if we poke around in the Preferences dialog, we see it _can_ be disabled:
 
-![Update Pref.png](/images/update-pref.png)
+![Update Pref.png](/assets/2017/11/30/update-pref.png)
 
 VirtualBox stores preferences in its own XML file located here:
 
@@ -36,7 +36,7 @@ Take a peek inside, and the first thing you see is this:
 
 **VBoxManage** is a command line tool that can do anything and everything with VirtualBox. [There's a whole chapter devoted to it in the manual, here](https://www.virtualbox.org/manual/ch08.html). It's fantastic and you can use it to automate loads of things. Anyway, we're interested in using its [**setextradata** command](https://www.virtualbox.org/manual/ch08.html#idm5711). Do read that section of the chapter - it's really informative, although it doesn't tell us _what_ the actual preference we want to set is. Unticking that **Check for Update** box, then peeking into the **VirtualBox.xml** file gives the game away (example below is from version 5.x):
 
-![update xml pref.png](/images/update-xml-pref.png)
+![update xml pref.png](/assets/2017/11/30/update-xml-pref.png)
 
 Setting the preference with **VBoxManage** is just a case of running this as the current logged in user:
 

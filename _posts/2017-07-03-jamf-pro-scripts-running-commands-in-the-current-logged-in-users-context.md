@@ -8,7 +8,7 @@ I've already been using this technique for a while but today, thanks to our fant
 
 One interesting thing about [Jamf Pro](https://www.jamf.com/products/jamf-pro/) is that it can execute scripts during a policy run. Scripts executed this way are run as the root user, which is all well and good if you need to do stuff to the system as a whole with elevated privileges. But what if you need to run a command _as if it's being run by the current logged in user themselves_ as part of a policy? One example would be to use a utility like [mysides](https://github.com/mosen/mysides) to configure a their sidebar, or if you want to invoke [lsregister](https://ss64.com/osx/lsregister.html) to register an application so that user doesn't see something this the first time it's launched (kudos to @franton on the [MacAdmins Slack](https://macadmins.herokuapp.com/) for pointing out that this tends to be more of an issue for applications living outside /Applications as macOS takes care of those automatically, but I digress):
 
-![audaemon](/images/audaemon.png)
+![audaemon](/assets/2017/07/03/audaemon.png)
 
 <!--more-->
 

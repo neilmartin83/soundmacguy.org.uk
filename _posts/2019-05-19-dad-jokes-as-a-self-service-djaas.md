@@ -19,7 +19,7 @@ https://twitter.com/tperfitt/status/1124770444652032000
 
 Meanwhile, on the [MacAdmins Slack](https://macadmins.herokuapp.com)...
 
-![](/images/image-2.png)
+![](/assets/2019/05/19/image-2.png)
 
 Which led to copious use of the new **/dadjoke** command, especially in the #london channel.
 
@@ -72,7 +72,7 @@ set theDialogText to (do shell script "curl https://icanhazdadjoke.com/")
  display dialog theDialogText
 ```
 
-![](/images/image-3.png)
+![](/assets/2019/05/19/image-3.png)
 
 For those amongst us using Jamf, we've got a binary called jamfHelper. [Learn more about that, here](https://apple.lib.utah.edu/jamfhelper/). Here's an example of how you might use jamfHelper in a script:
 
@@ -88,7 +88,7 @@ For those amongst us using Jamf, we've got a binary called jamfHelper. [Learn mo
      -button1 "Oh, Dad…"
 ```
 
-![](/images/image-4.png)
+![](/assets/2019/05/19/image-4.png)
 
 Why not put that one in a Self Service policy for your user's viewing pleasure?
 

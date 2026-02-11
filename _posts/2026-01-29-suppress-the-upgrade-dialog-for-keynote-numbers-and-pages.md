@@ -6,7 +6,7 @@ date: 2026-01-29
 
 Following [Apple's release of new versions of these apps](https://soundmacguy.wordpress.com/2026/01/28/keynote-numbers-and-pages-15-1-now-unified-across-all-apple-operating-systems/), users will be presented with the following dialog upon opening the previous versions:
 
-![](/images/image-5.png)
+![](/assets/2026/01/29/image-5.png)
 
 To see this dialog, the following conditions apply:
 

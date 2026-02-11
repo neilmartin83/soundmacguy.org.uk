@@ -80,7 +80,7 @@ Where `XXX-XXXX-XXXX-XXXX-XXXX` is substituted with your activation key.
 
 System/computer level settings are set in the following areas (from ESET's preferences dialog):
 
-![ESET_SYSTEM](/images/eset_system.png)
+![ESET_SYSTEM](/assets/2018/12/04/eset_system.png)
 
 This is where things are quite different than with SCEP. The file that's managed by the old **scep\_set** is gone and replaced by a single json file here:
 
@@ -101,7 +101,7 @@ It's now a case of:
 
 For step 4, you can export your settings from the Setup pane in the GUI:
 
-![ESET_IMPORTEXPORT](/images/eset_importexport.png)
+![ESET_IMPORTEXPORT](/assets/2018/12/04/eset_importexport.png)
 
 Alternatively, you can use **esets\_daemon**:
 
@@ -132,7 +132,7 @@ It is really important to note that if you disable certain functionality such as
 
 User-level settings are set in the following areas (from ESET's preferences dialog):
 
-![ESET_USER](/images/eset_user.png)
+![ESET_USER](/assets/2018/12/04/eset_user.png)
 
 Those settings are stored in the following file:
 

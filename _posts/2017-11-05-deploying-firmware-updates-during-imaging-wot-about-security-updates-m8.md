@@ -25,6 +25,6 @@ Once you have the package that matches your image's version of macOS, follow the
 
 In case you're wondering, I sniffed these packages out using [Margarita](https://github.com/jessepeterson/margarita) on my own [Reposado](https://github.com/wdas/reposado) based Software Update Server, but you could also use [SUS Inspector](https://github.com/hjuutilainen/sus-inspector), as shown here:
 
-![SUSInspect](/images/susinspect.png)
+![SUSInspect](/assets/2017/11/05/susinspect.png)
 
 Bear in mind that Apple doesn't seem to include the same firmware updates across both Security Updates - namely, macOS 10.11.6 doesn't get as many. [Here's a nice spreadsheet that shows the details](https://docs.google.com/spreadsheets/d/1qGRVF1aRokQgm_LuTsFUN2Knrh0Sd3Gp0ziC_VIWqoM/edit), from Pepijn Bruienne.

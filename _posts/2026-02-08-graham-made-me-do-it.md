@@ -4,7 +4,7 @@ title: "Graham made me do it"
 date: 2026-02-08
 ---
 
-![](/images/removal.png)
+![](/assets/2026/02/08/removal.png)
 
 Back in 2017 a [nudge from Daz](/2017/03/26/daz-made-me-do-it.html) got me started on this whole blogging adventure, and up it went on Wordpress. It's what I was familiar with at the time and it got me up and running quickly.
 

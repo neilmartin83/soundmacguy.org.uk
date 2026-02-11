@@ -35,11 +35,11 @@ I've put together [a GitHub repository](https://github.com/neilmartin83/terrafor
 
 It was a great privilege to share the stage with [Tristan Valente](https://www.linkedin.com/in/tristan-valente-49628990) from Jamf partner [Netopie](https://www.linkedin.com/in/tristan-valente-49628990). Together, we explored Netopie's journey with GitOps/IaC and Tristan shared their experiences and best-practices. This was followed with a comprehensive introduction into Terraform, highlighting specific configuration examples using the Jamf Pro provider.
 
-![](/images/img_5435.png)
+![](/assets/2025/10/11/img_5435.png)
 
-![](/images/img_0055.png)
+![](/assets/2025/10/11/img_0055.png)
 
-![](/images/image-from-ios.png)
+![](/assets/2025/10/11/image-from-ios.png)
 
 The session video is [available here](https://reg.jnuc.jamf.com/flow/jamf/jnuc2025/home25/page/sessioncatalogphase2/session/1744962492146001SJxI) for attendees to view and I'll update this post when it's made public.
 
@@ -55,9 +55,9 @@ It explored Vanguard's journey and how they leverage IaC to bring together power
 
 The SE team provides [these Terraform modules](https://github.com/Jamf-Concepts/terraform-jamf-platform) for inspiration on starting your own Terraform projects that manage your Jamf infrastructure.
 
-![](/images/img_0048.jpg)
+![](/assets/2025/10/11/img_0048.jpg)
 
-![](/images/img_0050.png)
+![](/assets/2025/10/11/img_0050.png)
 
 ## Session: Automating Jamf Security Platform Configuration
 

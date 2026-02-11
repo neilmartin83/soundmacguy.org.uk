@@ -7,7 +7,7 @@ coverImage: "i-know-kung-fu-i-know-mysql-server.jpg"
 
 Jamf released version 9.98 of its Casper Suite/JSS Jamf Pro management suite [last Thursday](http://docs.jamf.com/9.98/casper-suite/release-notes/What's_New_in_This_Release.html). The eagle-eyed amongst us may have noticed a change to the system requirements deep within the documentation:
 
-![Screen Shot 2017-03-27 at 10.02.58](/images/screen-shot-2017-03-27-at-10-02-58.png)
+![Screen Shot 2017-03-27 at 10.02.58](/assets/2017/03/27/screen-shot-2017-03-27-at-10-02-58.png)
 
 Prior to version 9.98, MySQL 5.7 was not recommended. You'll likely have MySQL 5.5 or 5.6 installed. I'm running 5.6 and successfully upgraded my Jamf Pro Server to 9.98 in our development/test environment. In the interests of future proofing as well as satisfying my little OCD monster, I decided to migrate to MySQL 5.7 as well. I'm deliberately avoiding the word 'upgrade' because it's more like an uninstall and re-install, with a few steps in between. What follows is how I did it in a Windows Server setting. Surprisingly, Jamf don't provide much in terms of documentation for this specific activity, but the move to MySQL 5.7 will be something admins will have to consider as Jamf Pro evolves on its way up to version 10.
 
@@ -21,7 +21,7 @@ There may be other ways to do this - here's what I did. I'd love to hear from yo
 
 Stop Tomcat's service first. We don't want the database being changed whilst we're working. Click Start, Administrative Tools, then launch the Services application. This is where we can control all the services running on our server. You'll probably find yourself coming back here quite often... Right-click the "Apache Tomcat 8.0 Tomcat8" service and choose Stop. Wait a moment.
 
-![Stop tomcat](/images/stop-tomcat.png)
+![Stop tomcat](/assets/2017/03/27/stop-tomcat.png)
 
 Now, let's back up our JSS database. Jamf provide a little Java utility for this (I think it uses mysqldump) - if you installed your JSS to the default location, it's in:
 
@@ -31,7 +31,7 @@ C:\Program Files\JSS\bin\JSSDatabaseUtil.jar
 
 You need to run it with local administrator privileges. I found the only way to do this was to open a Command Prompt as administrator - hit the Start menu and search for 'cmd', then right-click and select "Run as administrator":
 
-![Screen Shot 2017-03-27 at 10.18.58](/images/screen-shot-2017-03-27-at-10-18-58.png)
+![Screen Shot 2017-03-27 at 10.18.58](/assets/2017/03/27/screen-shot-2017-03-27-at-10-18-58.png)
 
 Next, issue the following command (assuming that you installed the JSS to the default location):
 
@@ -43,7 +43,7 @@ Handy hint: to make things quicker for next time, stick that command in a text f
 
 In the Database Utility, click Save Backup Now and choose where you want to save it. This may take a little while depending on the size of your database
 
-![Screen Shot 2017-03-27 at 10.26.03](/images/screen-shot-2017-03-27-at-10-26-03.png)
+![Screen Shot 2017-03-27 at 10.26.03](/assets/2017/03/27/screen-shot-2017-03-27-at-10-26-03.png)
 
 # Uninstall MySQL Server 5.6
 
@@ -57,7 +57,7 @@ Now, download the MySQL Server installer from [https://dev.mysql.com/downloads/
 
 We'll use the installer to remove MySQL 5.6 and then install MySQL 5.7. Run the installer - you should see a dialog like this:
 
-![Screen Shot 2017-03-27 at 10.43.59](/images/screen-shot-2017-03-27-at-10-43-59.png)
+![Screen Shot 2017-03-27 at 10.43.59](/assets/2017/03/27/screen-shot-2017-03-27-at-10-43-59.png)
 
 If you're not running the most up-to-date version of 5.6, you'll be thrown straight into an upgrade installer for it. Click Cancel to get to the main installer window above. If you are running the most up-to-date version, you won't see the yellow circle/arrow icon either. Depending on your setup, you may have other items listed - I tend to have Workbench as it's really useful for monitoring database activity and troubleshooting.
 
@@ -65,7 +65,7 @@ Click the Remove... button.
 
 Tick the "MySQL Server 5.6.xx" entry and click Execute, then confirm that you _really_ are sure.
 
-![removemysql56](/images/removemysql56.png)
+![removemysql56](/assets/2017/03/27/removemysql56.png)
 
  
 
@@ -77,27 +77,27 @@ Once the process is complete, if you're prompted to reboot, do so.
 
 Run the MySQL Installer again - this time, you'll see that MySQL Server has gone. Click Add...
 
-![mysql add](/images/mysql-add.png)
+![mysql add](/assets/2017/03/27/mysql-add.png)
 
 Next, drill down the MySQL Servers category in the Available Products pane and select the current MySQL Server 5.7 version - you'll probably want the X64 one unless you're running a 32 bit Windows Server. Click the green arrow to add it to the list of Products/Features To Be Installed, then click Next:
 
-![mysql57install1](/images/mysql57install1.png)
+![mysql57install1](/assets/2017/03/27/mysql57install1.png)
 
 Once you're happy, click Execute to begin! MySQL Server will download and install. Once it's done, you'll see a summary of what's happened. Click Next:
 
-![mysql57installdone](/images/mysql57installdone.png)
+![mysql57installdone](/assets/2017/03/27/mysql57installdone.png)
 
 Let's get this beast configured. Click Next again:
 
-![mysql57abouttoconfig](/images/mysql57abouttoconfig.png)
+![mysql57abouttoconfig](/assets/2017/03/27/mysql57abouttoconfig.png)
 
 Change the Config Type to "Server Machine". Leave everything else as-is (unless you know something I don't!), then click Next:
 
-![mysqlservermachine](/images/mysqlservermachine.png)
+![mysqlservermachine](/assets/2017/03/27/mysqlservermachine.png)
 
 Now it's time to create a password for the root account and set up a database user. The root password can be anything you like - if you know the one for the previous installation of MySQL Server 5.6, you could use that. Or you could change it. Make sure you document it though - I like using [KeyPassX](https://www.keepassx.org/) to store stuff like this.
 
-![Screen Shot 2017-03-27 at 11.20.17](/images/screen-shot-2017-03-27-at-11-20-17.png)
+![Screen Shot 2017-03-27 at 11.20.17](/assets/2017/03/27/screen-shot-2017-03-27-at-11-20-17.png)
 
 Next, create the database user that will be used by the JSS to access its database. It's usually called 'jamfsoftware'.
 
@@ -108,19 +108,19 @@ Next, create the database user that will be used by the JSS to access its databa
 5. Click OK.
 6. Click Next.
 
-![mysqluser](/images/mysqluser.png)
+![mysqluser](/assets/2017/03/27/mysqluser.png)
 
 Leave the Windows Service settings as-is (unless you know more than me!), click Next:
 
-![mysql57service](/images/mysql57service.png)
+![mysql57service](/assets/2017/03/27/mysql57service.png)
 
 Leave the Plugins and Extensions alone (the JSS doesn't do Document Store), click Next:
 
-![mysql57plugins](/images/mysql57plugins.png)
+![mysql57plugins](/assets/2017/03/27/mysql57plugins.png)
 
 Now, click Execute and watch the magic happen! Once done, you should see this:
 
-![mysql57finish](/images/mysql57finish.png)
+![mysql57finish](/assets/2017/03/27/mysql57finish.png)
 
 Click Finish and close the MySQL Installer.
 
@@ -170,7 +170,7 @@ Now that we have a brand new MySQL Server 5.7 installation, it won't have a data
 
 Launch the MySQL 5.7 Command Line Client (hint: click Start and type 'mysql' - it'll appear). Next, enter the MySQL root password you set up during installation. You should see a mysql prompt like this:
 
-![Screen Shot 2017-03-27 at 12.00.32](/images/screen-shot-2017-03-27-at-12-00-32.png)
+![Screen Shot 2017-03-27 at 12.00.32](/assets/2017/03/27/screen-shot-2017-03-27-at-12-00-32.png)
 
 Now let's create that database. This is documented in Jamf's installation guides but here's what I did:
 
@@ -192,19 +192,19 @@ If you've done it properly, you should see "Query OK" statements after each comm
 
 Now let's use the JSS Database Utility to restore our backup. See the beginning of this post if you can't remember how to launch it with elevated privileges. You'll probably see this:
 
-![Screen Shot 2017-03-27 at 12.11.01](/images/screen-shot-2017-03-27-at-12-11-01.png)
+![Screen Shot 2017-03-27 at 12.11.01](/assets/2017/03/27/screen-shot-2017-03-27-at-12-11-01.png)
 
 Click Continue and browse to C:\\Program Files\\MySQL\\MySQL Server 5.7\\bin and all should be well.
 
 Click Restore Backup Now... and locate the database backup file you created earlier (the filename will contain the date and time, and have a .sql.gz extension):
 
-![databaseutilityrestore](/images/databaseutilityrestore.png)
+![databaseutilityrestore](/assets/2017/03/27/databaseutilityrestore.png)
 
 This will take a little while - in my case it took about 10 minutes.
 
 **When you're prompted to restart Tomcat, click No - we need to upgrade the database first.**
 
-![restarttomcatno](/images/restarttomcatno.png)
+![restarttomcatno](/assets/2017/03/27/restarttomcatno.png)
 
 Close the Database Utility and launch a new Command Prompt. Issue the following command, then enter your MySQL root password when prompted:
 
@@ -218,9 +218,9 @@ Now we can restart the Tomcat service - if you're still following along, it's ca
 
 Point a web browser at your JSS - if all went well, you'll see it starting up (hold your breath!), then you should be able to log in:
 
-![jssstartup](/images/jssstartup.png)
+![jssstartup](/assets/2017/03/27/jssstartup.png)
 
-![Screen Shot 2017-03-27 at 12.38.45](/images/screen-shot-2017-03-27-at-12-38-45.png)
+![Screen Shot 2017-03-27 at 12.38.45](/assets/2017/03/27/screen-shot-2017-03-27-at-12-38-45.png)
 
 Yes!
 

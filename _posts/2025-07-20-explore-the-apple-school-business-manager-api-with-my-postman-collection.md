@@ -9,7 +9,7 @@ If you're working with the Apple School and Business Manager APIs, you know how 
 
 [Click here to grab it!](https://www.postman.com/neilmartin-6501015/apple-school-and-business-manager-api/collection/tss0hiz/apple-school-and-business-manager-api?action=share&source=copy-link&creator=44709244)
 
-![](/images/image-2.png)
+![](/assets/2025/07/20/image-2.png)
 
 You'll need an Access Token to authenticate any live requests you want to make. Learn how to generate one here: [https://developer.apple.com/documentation/apple-school-and-business-manager-api/implementing-oauth-for-the-apple-school-and-business-manager-api](https://developer.apple.com/documentation/apple-school-and-business-manager-api/implementing-oauth-for-the-apple-school-and-business-manager-api)
 
