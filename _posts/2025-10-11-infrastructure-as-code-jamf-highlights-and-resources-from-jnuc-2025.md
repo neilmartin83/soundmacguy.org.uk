@@ -19,7 +19,7 @@ This year's JNUC saw a lot of excitement around IaC and its place in managing an
 
 With the announcement of the Jamf Platform APIs, Jamf published its very own Terraform provider: [terraform-provider-jamfplatform](https://github.com/Jamf-Concepts/terraform-provider-jamfplatform). I'm proud to have played a part in building it, and even prouder to watch it garner a spot in the opening keynote:
 
-https://www.youtube.com/watch?v=ij4kLJsGAe8&t=3001s
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ij4kLJsGAe8?si=ZqkBuKSFZsqDDTGn&amp;start=3001" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Jamf also reinforced its commitment to continue contributions to, and endorsement of the fantastic and well-established community [Jamf Pro provider](https://github.com/deploymenttheory/terraform-provider-jamfpro) from friends at Deployment Theory/Lloyds Banking Group. Use both providers together to leverage the full suite of API capabilities that are available:
 

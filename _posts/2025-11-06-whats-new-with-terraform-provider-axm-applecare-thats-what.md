@@ -13,7 +13,7 @@ With that, [terraform-provider-axm](https://registry.terraform.io/providers/neil
 
 Back to Terraform; if you were to declare the data source and an output for it, like this:
 
-```
+```hcl
 data "axm_organization_device_applecare_coverage" "example" {
   id = "FAKE123456"
 }
