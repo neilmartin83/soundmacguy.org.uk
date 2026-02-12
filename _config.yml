@@ -1,10 +1,12 @@
 title: Sound Mac Guy
+author: Neil Martin
 description: >
   I used to be a sound engineer. Now I manage Apple stuff.
 baseurl: ""
 url: "https://soundmacguy.org.uk"
 github_username: neilmartin83
 slack_username: neilmartin83
+linkedin_username: neilmartin83
 theme: minima
 minima:
   theme: auto

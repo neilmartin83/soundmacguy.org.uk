@@ -20,6 +20,16 @@
     }
 }
 
+.social-media-list a,
+.social-media-list a:visited {
+    color: $grey-color;
+}
+
+.social-media-list a:hover,
+.social-media-list a:focus {
+    color: $grey-color-dark;
+}
+
 /* Archive page-specific styles */
 .archives {
     .post-link,
