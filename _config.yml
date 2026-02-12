@@ -6,6 +6,8 @@ url: "https://soundmacguy.org.uk"
 github_username: neilmartin83
 slack_username: neilmartin83
 theme: minima
+minima:
+  theme: auto
 plugins:
   - jekyll-feed
   - jekyll-gist
