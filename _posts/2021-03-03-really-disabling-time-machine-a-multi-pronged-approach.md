@@ -25,7 +25,7 @@ Setting the following preference via the command line will stop this behaviour:
 
 The following MDM Configuration Profile can (and should) be used to enforce this:
 
-https://gist.github.com/neilmartin83/7ef21986a8c11555ac7cad8733376a63
+{% gist 7ef21986a8c11555ac7cad8733376a63 %}
 
 ## Prong 2 - Stop Time Machine's automatic backups being enabled
 
@@ -37,13 +37,13 @@ Even if you suppress the prompts for backing up when new drives are connected, i
 
 The following MDM configuration Profile can (and should) be used to enforce this (it will "grey-out" the **Back Up Automatically** tick-box in System Preferences). Thanks to Mike Dowler for pointing out this one!
 
-https://gist.github.com/neilmartin83/ee13843a6c64c23f28eec1fd3cce6304
+{% gist ee13843a6c64c23f28eec1fd3cce6304 %}
 
 ## Prong 3 - Hide the menu bar item
 
 Users can initiate backups using the menu bar icon for Time Machine, if they've configured backup destinations in the past. This MDM Configuration Profile will hide it:
 
-https://gist.github.com/neilmartin83/5d274b5e0a3c9d4c45dfeda8bdf668a5
+{% gist 5d274b5e0a3c9d4c45dfeda8bdf668a5 %}
 
 ## Prong 4 - Remove existing backup destinations
 
@@ -51,7 +51,7 @@ Folks may have set up Time Machine before you managed to block it, so they'll ha
 
 You can run this with a Jamf policy, Launch Daemon or with a tool like [Outset](https://github.com/chilcote/outset). Thanks to Mike Dowler for the tip on stopping a backup if it's running when you execute the script.
 
-https://gist.github.com/neilmartin83/5f1b9ec58071243b63e0829d0830b659
+{% gist 5f1b9ec58071243b63e0829d0830b659 %}
 
 ## Prong 5 - Disable the Time Machine System Preferences pane
 
@@ -59,6 +59,6 @@ This is the final nail in the coffin, to stop users adding a new backup destinat
 
 The following profile will block just the Time Machine System Preferences Pane:
 
-https://gist.github.com/neilmartin83/cfcdd4bd98d5be6d48d4fa4583de459a
+{% gist cfcdd4bd98d5be6d48d4fa4583de459a %}
 
 If you've got any more tips on taming Time Machine, please let me know in the comments.

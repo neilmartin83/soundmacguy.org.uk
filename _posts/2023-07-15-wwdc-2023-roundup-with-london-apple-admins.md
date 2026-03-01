@@ -10,4 +10,4 @@ It was also the first time in over 3 years (I think) that all 5 of the organiser
 
 Please do check out the video below for our somewhat unique perspective on WWDC 2023 (and enjoy the first part where things didn't exactly go to plan!). This meet had a gaggle of fantastic talks from the LAA crew; Steve, Darren and Ben!
 
-https://www.youtube.com/watch?v=qKDG8N9CvmA&t=91s
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qKDG8N9CvmA?si=aAU2EBhss3kwS7pw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

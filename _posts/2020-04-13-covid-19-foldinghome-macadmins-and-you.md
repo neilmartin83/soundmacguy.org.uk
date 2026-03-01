@@ -25,17 +25,9 @@ By [downloading](https://foldingathome.org/start-folding/) (and optionally confi
 
 Yes. If deploying this across your fleet of Macs tickles your pickle, read on... The client comes as a signed, notarized (although not notarized for more recent versions since the time of writing this) package:
 
-<figure>
-
-![](/assets/2020/04/13/image.png)
-
-<figcaption>
-
-Signed and notarized! But not for the latest version...
-
-</figcaption>
-
-</figure>
+| ![](/assets/2020/04/13/image.png) |
+|:--:|
+| *Signed and notarized! But not for the latest version...* |
 
 The client binary itself installs in **/usr/local/bin** along with applications to configure it and view your stats. We also get a LaunchDaemon to start the client when your Mac boots.
 
@@ -43,7 +35,7 @@ The **postinstall** script is deployment-friendly too. It makes use of detecting
 
 Here's a snippet that shows how it will exit when installed by command line (the part which opens your browser is after this and won't run!).
 
-```
+```bash
 #Don't launch GUI if CLI install
 [ "$COMMAND_LINE_INSTALL" == "1" ] && exit 0
 ```
@@ -62,15 +54,15 @@ The Folding@home client gets and sets configuration options in the file:
 
 For a system like a Mac Mini, without an external GPU (so not using GPU acceleration), configured only to join a team and set a username, the file looks like this. It has things you can modify:
 
-https://gist.github.com/neilmartin83/8bc55e8dce4c945b8ac1bf431f2e5d50
+{% gist 8bc55e8dce4c945b8ac1bf431f2e5d50 %}
 
 The **<!-- User Information -->** section (lines 5-8) has everything you need to join a team and set your username:
 
-**<passkey v='xxxxxxxxxxxxxxxxxxxxxxxxx'/>** : This is a unique key that identifies you. Replace the x's with a passkey you get from [https://apps.foldingathome.org/getpasskey](https://apps.foldingathome.org/getpasskey). You must have a passkey in order to set a username and team.
+**`<passkey v='xxxxxxxxxxxxxxxxxxxxxxxxx'/>`** : This is a unique key that identifies you. Replace the x's with a passkey you get from [https://apps.foldingathome.org/getpasskey](https://apps.foldingathome.org/getpasskey). You must have a passkey in order to set a username and team.
 
-**<team v='xxxxxx'/>**: The team ID you want to join. Leave this set to 0 if you don't want to join a team. The **MacAdmins** team ID is **257618** - go on... you know you want to!
+**`<team v='xxxxxx'/>`**: The team ID you want to join. Leave this set to 0 if you don't want to join a team. The **MacAdmins** team ID is **257618** - go on... you know you want to!
 
-**<user v='xxxxxxxxxxxx'/>**: Your username. 'nuff said.
+**`<user v='xxxxxxxxxxxx'/>`**: Your username. 'nuff said.
 
 On a basic level, the client can also be set to run with different levels of **Folding Power**; **Light**, **Medium** (default) and **Full**. This essentially means how much CPU/GPU resource it uses, along with how aggressively it's used. [There's a good explanation of Folding Power here](https://foldingathome.org/faqs/fah-v7/v7-introduction/web-control/folding-power-slider/).
 
@@ -78,11 +70,11 @@ Along with **Folding Power**, you can configure whether the process runs all the
 
 As an example, if we set a more conservative configuration with **Folding Power** to **Light** and **When** to **Only when idle**, our **config.xml** will change to look like this:
 
-https://gist.github.com/neilmartin83/11774203fb3db06273a5db37d0b53b9d
+{% gist 11774203fb3db06273a5db37d0b53b9d %}
 
 We have a new **<!-- Slot Control -->** section (lines 5-6)
 
-```
+```xml
 <!-- Slot Control -->
 <power v='LIGHT'/>
 ```
@@ -91,7 +83,7 @@ To set **Folding Power** to **Full**, changing the **power v** tag value from **
 
 The **<!-- Folding Slots -->** section has also changed (lines 13-16):
 
-```
+```xml
 <!-- Folding Slots -->
 <slot id='0' type='CPU'>
 <idle v='true'/>
@@ -102,7 +94,7 @@ The **idle v** tag controls whether the process is running at idle (**'true'**),
 
 When you make a configuration change, you must restart the client for it use the new settings. That means reloading the LaunchDaemon (as root):
 
-```
+```bash
 launchctl unload /Library/LaunchDaemons/org.foldingathome.fahclient.plist
 launchctl load /Library/LaunchDaemons/org.foldingathome.fahclient.plist
 ```

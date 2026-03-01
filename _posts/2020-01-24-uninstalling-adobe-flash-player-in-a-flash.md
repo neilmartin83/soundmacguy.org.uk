@@ -19,7 +19,7 @@ As an admin, the announcement of Flash Player's demise a mixed bag. Pleasure/pai
 
 Alternatively, you could just run this command (as root):
 
-```
+```bash
 "/Applications/Utilities/Adobe Flash Player Install Manager.app/Contents/MacOS/Adobe Flash Player Install Manager" -uninstall
 ```
 
@@ -27,7 +27,7 @@ Yep, that's it. Really. Put it in a script and push it out with your management 
 
 I stumbled on this with **strings**. It's a utility that comes with the [Xcode Command Line Tools](https://macpaw.com/how-to/install-command-line-tools) and it finds ASCII strings in binary files. It's really useful for running against application binaries to sniff out hidden command line flags and such. So I tried it on the Adobe Flash Player Install Manager, and here's part of the output (there was a LOT more!):
 
-https://gist.github.com/neilmartin83/f6bef5964c41d24b1cf3f5c923573ea0
+{ % gist f6bef5964c41d24b1cf3f5c923573ea0 %}
 
 My spidey senses led me to think that **\-uninstall** might be a flag that would, erm, uninstall. I tried it out and got lucky.
 

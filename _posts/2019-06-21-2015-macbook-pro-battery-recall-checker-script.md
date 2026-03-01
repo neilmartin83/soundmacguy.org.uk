@@ -11,28 +11,16 @@ Here's a script that might help. Feed it a text file containing the serial numbe
 
 How to use it (once you've downloaded and made it executable):
 
-```
+```bash
 ./mbpserialcheck.sh /path/to/inputfile.txt
 ```
 
 To output directly to a CSV file:
 
-```
+```bash
 ./mbpserialcheck.sh /path/to/inputfile.txt > /path/to/outputfile.csv
 ```
 
-If you can't see the script in this post (Wordpress has issues embedding from GitHub on some mobile platforms), here's a direct link for you: [https://gist.github.com/neilmartin83/9b6b2163edb71e2e6e578df54f0d599a](https://gist.github.com/neilmartin83/9b6b2163edb71e2e6e578df54f0d599a)
-
-<figure>
-
-https://gist.github.com/neilmartin83/9b6b2163edb71e2e6e578df54f0d599a
-
-<figcaption>
-
-  
-
-</figcaption>
-
-</figure>
+{ % gist 9b6b2163edb71e2e6e578df54f0d599a %}
 
 Thanks to Nick Tong for the inspiration behind this. [He wrote a Jamf Extension Attribute](https://www.jamf.com/jamf-nation/discussions/32400/battery-recall-for-15-mid-2015-mbp#responseChild186454) you can use that'll tell you which MacBooks are eligible for recall the next time they submit inventory.

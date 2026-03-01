@@ -222,7 +222,7 @@ Run them as part of a login (whilst login hooks are still a thing) or self-servi
 
 ### Add or replace a bookmark
 
-https://gist.github.com/neilmartin83/00fb2d045272219736d29e244b717527
+{% gist 00fb2d045272219736d29e244b717527 %}
 
 Use this to add a Microsoft Remote Desktop bookmark entry for the specified computer. The bookmark's unique ID is generated automatically. Parameters should be filled out as follows:
 
@@ -262,7 +262,7 @@ A new bookmark will be created in Microsoft Remote Desktop, configured with your
 
 ### Delete a bookmark
 
-https://gist.github.com/neilmartin83/a35db3288c1a6e0f24db88df8dcde65c
+{% gist a35db3288c1a6e0f24db88df8dcde65c %}
 
 Use this to delete all bookmarks with the specified friendly or host name. Beware that if there are multiple bookmarks with the same name, this deletes them ALL! Friendly names take precedence, hostnames are used when the bookmark does not have a friendly name set. Parameters should be filled out as follows:
 
@@ -272,6 +272,6 @@ Here's an example of the policy log, following a successful run:
 
 ![](/assets/2020/06/14/image-2.png)
 
-## Further learnings...
+## Further learnings
 
 Check out the #microsoft-rdc channel in the MacAdmins Slack to ask questions and chat to others about their scripting workflows. Special thanks go to Elton Saul (@eltons) and Gieta Laksmana (@gietal) from Microsoft, who hang out there and provide an invaluable resource for the Mac Admin community. Without them, the scripting functionality in Microsoft Remote Desktop 10 wouldn't even exist.

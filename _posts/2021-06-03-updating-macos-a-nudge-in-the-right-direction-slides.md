@@ -13,6 +13,6 @@ Thank you to everyone who attended and special thanks to the people at Penn Stat
 
 Watch the video below:
 
-https://youtu.be/jyrtBXYxY7c
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jyrtBXYxY7c?si=l_esHglTfyIhDWfj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-[Click here to download the slides!](https://soundmacguy.wordpress.com/wp-content/uploads/2021/06/2021-06-03-updating-macos-a-nudge-in-the-right-direction.pdf)
+[Click here to download the slides!](/assets/2021/06/03/2021-06-03-updating-macos-a-nudge-in-the-right-direction.pdf)

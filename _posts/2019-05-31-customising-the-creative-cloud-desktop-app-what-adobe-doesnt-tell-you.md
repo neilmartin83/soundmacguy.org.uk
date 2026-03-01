@@ -25,7 +25,7 @@ If we leave it ticked to disable file syncing (which you might want to do for co
 
 ![](/assets/2019/05/31/image-6.png)
 
-### But I want to hide the thing...
+### But I want to hide the thing
 
 Telling folks they don't have access to something because IT said so is a surefire way to annoy them and generate lots of questions. Wouldn't it be better to just remove that panel altogether? Ignorance is bliss, right? It turns out, through some trial and error, that you can. Let's have a look at **ServiceConfig.xml** again, focusing on the **FilesPanel** key:
 
@@ -41,7 +41,7 @@ Here's the result when the CCDA is next launched:
 
 Voila, no more **Files** panel!
 
-### But, but, I want to hide the other things...
+### But, but, I want to hide the other things
 
 That's not all! We can do the same with the **Fonts, Stock and Behance** panels too by adding some more to our **ServiceConfig.xml**. That might be useful in situations where your users don't have access to those services; users with only the "Spark + 2GB storage" product (which is available for all staff and students for free in education) won't have **Fonts** or **Stock**. If you [disable Public Link Sharing in your Admin Console](https://helpx.adobe.com/uk/enterprise/using/asset-settings.html), users can't do much with **Behance** either. The CCDA is taunting them, and that's just not cricket.
 
@@ -53,12 +53,12 @@ The tags/keys to add are undocumented as far as I can tell. I found them by shee
 
 So here's a **ServiceConfig.xml** example that will make them all go away, except **Learn** (because education):
 
-https://gist.github.com/neilmartin83/ae8f6b6b94af9f335a61f537a2564b79
+{ % gist ae8f6b6b94af9f335a61f537a2564b79 %}
 
 And the result... lovely and clean:
 
 ![](/assets/2019/05/31/image-11.png)
 
-### Beware, there be dragons...
+### Beware, there be dragons
 
 As with most pleasurable things, there is often an element of pain. This is no exception. Hiding panels effectively stops the CCDA from working/syncing things from their respective services. If your users have access to any services that you hide panels for, things might break when they're using apps which leverage that functionality. I tested this with **Fonts** specifically. With the panel hidden, in-app syncing/downloading of cloud fonts did not work when the user signed in had that service enabled. So, don't hide panels for services your users have access to.
