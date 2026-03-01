@@ -15,7 +15,7 @@ So why am I blogging about this? I have kids, so any new way to annoy them will 
 
 It started in a couple of places. A couple of weeks ago, the wonderful Tim Perfitt of [Twocanoes](https://twocanoes.com/) put together an app ([get it here](https://testflight.apple.com/join/XyzsCR12)) that lets you send a random joke to a unlucky recipient in Messages.
 
-https://twitter.com/tperfitt/status/1124770444652032000
+<https://twitter.com/tperfitt/status/1124770444652032000>
 
 Meanwhile, on the [MacAdmins Slack](https://macadmins.herokuapp.com)...
 
@@ -29,7 +29,7 @@ The source of all this fun can be traced back to the website [https://icanhazdad
 
 Let's open a Terminal and start simple:
 
-```
+```bash
 $ curl https://icanhazdadjoke.com
  What did the hat say to the scarf?
  You can hang around. I'll just go on ahead.
@@ -37,18 +37,18 @@ $ curl https://icanhazdadjoke.com
 
 So using **curl** and pointing it at the endpoint with no arguments will GET us a plain text response with a random dad joke. As the API's documentation says though, it's considerate to specify your own custom **User-Agent**. This tells the endpoint who's asking for a joke and gives the creators a better understanding of usage. Use the **\-H** argument to include an extra header (in fact two) in the request:
 
-```
-$ curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.wordpress.com)" -H "Accept: text/plain" https://icanhazdadjoke.com/
+```bash
+curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.org.uk)" -H "Accept: text/plain" https://icanhazdadjoke.com/
 ```
 
 The first is the **User-Agent** (which can be your name and website, for example), and the second is telling the endpoint that we want its reply in plain text.
 
 What can we do with this? Well, lots of things. If we look at the good old Bash scripting language, we can use [command substitution](https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html) to leverage the power of dad jokes. For example:
 
-```
+```bash
 #!/bin/bash
 
-dadJoke=$(/usr/bin/curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.wordpress.com)" -H "Accept: text/plain" https://icanhazdadjoke.com/)
+dadJoke=$(/usr/bin/curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.org.uk)" -H "Accept: text/plain" https://icanhazdadjoke.com/)
 
 /bin/echo "$dadJoke"
 ```
@@ -59,15 +59,15 @@ This will create a variable called **dadJoke** and populate it with the output o
 
 Did you know macOS has a built-in speech synthesiser, namely the **say** command? Try this:
 
-```
-$ say $(curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.wordpress.com)" -H "Accept: text/plain" https://icanhazdadjoke.com/)
+```bash
+say $(curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.org.uk)" -H "Accept: text/plain" https://icanhazdadjoke.com/)
 ```
 
 Great, eh? I hope you're not tempted to **ssh** into any Macs you might manage and run that one remotely...
 
 Your users don't have to miss out either. As Mac Admins, we've got tools to nag, prompt and notify them. Here's an example using AppleScript:
 
-```
+```applescript
 set theDialogText to (do shell script "curl https://icanhazdadjoke.com/")
  display dialog theDialogText
 ```
@@ -76,7 +76,7 @@ set theDialogText to (do shell script "curl https://icanhazdadjoke.com/")
 
 For those amongst us using Jamf, we've got a binary called jamfHelper. [Learn more about that, here](https://apple.lib.utah.edu/jamfhelper/). Here's an example of how you might use jamfHelper in a script:
 
-```
+```bash
 #!/bin/bash
 
 /Library/Application\ Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper \
@@ -84,7 +84,7 @@ For those amongst us using Jamf, we've got a binary called jamfHelper. [Learn mo
      -icon "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/UserIcon.icns" \
      -title "Dad joke" \
      -heading "Dad says…" \
-     -description "$(curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.wordpress.com)" -H "Accept: text/plain" https://icanhazdadjoke.com/)" \
+     -description "$(curl -H "User-Agent: Sound Mac Guy (https://soundmacguy.org.uk)" -H "Accept: text/plain" https://icanhazdadjoke.com/)" \
      -button1 "Oh, Dad…"
 ```
 

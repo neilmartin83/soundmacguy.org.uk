@@ -5,7 +5,7 @@ date: 2019-05-09
 coverImage: "adobesdl.jpg"
 ---
 
-### Before we begin...
+### Before we begin
 
 Read this: [https://dazwallace.wordpress.com/2019/05/08/the-great-adobe-purge-of-19/](https://dazwallace.wordpress.com/2019/05/08/the-great-adobe-purge-of-19/)
 
@@ -43,14 +43,14 @@ Builds an installer package from that downloaded zip archive that does the follo
 - It ends with a summary of what it has and hasn't uninstalled.
 - It's easy to read and understand, which makes it quick to identify failures for individual apps.
 
-### To use my Autopkg recipes:
+### To use my Autopkg recipes
 
 My Autopkg recipe repo can be found at [https://github.com/autopkg/neilmartin83-recipes/](https://github.com/autopkg/neilmartin83-recipes/) if you wish to inspect my recipes before running them (which I strongly recommend you do!).
 
 - Download and install **Autopkg** from [http://autopkg.github.io/autopkg/](http://autopkg.github.io/autopkg/)
 - In **Terminal**, add my recipe repo and run the recipe:
 
-```
+```bash
 autopkg repo-add neilmartin83-recipes
 autopkg run AdobeUninstallUnauthorizedVersions.pkg
 ```
