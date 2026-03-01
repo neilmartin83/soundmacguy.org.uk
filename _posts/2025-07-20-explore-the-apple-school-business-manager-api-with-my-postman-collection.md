@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Explore the Apple School &amp; Business Manager API with My Postman Collection"
+title: "Explore the Apple School & Business Manager API with My Postman Collection"
 date: 2025-07-20
 coverImage: "postapple.png"
 ---
