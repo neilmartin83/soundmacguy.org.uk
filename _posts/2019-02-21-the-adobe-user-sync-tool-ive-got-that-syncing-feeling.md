@@ -15,7 +15,7 @@ In my environment, the UST is the core behind automating the process of getting 
 
 **Watch the video:**
 
-https://youtu.be/5EAo9GP7pYk?t=920
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5EAo9GP7pYk?si=Nf6RDcgH6ih1Odp_&amp;start=917" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Links:**
 
@@ -25,11 +25,11 @@ https://youtu.be/5EAo9GP7pYk?t=920
 - [Adobe - Set up the User Sync Tool](https://helpx.adobe.com/uk/enterprise/using/user-sync.html)
 - [Adobe - User Sync Tool GitHub](https://github.com/adobe-apiplatform/user-sync.py/releases)
 - [Adobe - User Sync Tool Setup and Success Guide](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/)[](https://github.com/adobe-apiplatform/user-sync.py/releases)
-    - [Adobe - User Sync Tool Command Line Options](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/command_line_options.html)
-    - [Adobe - User Sync Tool Testing Guidance](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/test_run.html)
-    - [Adobe - User Sync Tool Deployment Best Practices - Security](https://adobe-apiplatform.github.io/user-sync.py/en/user-manual/deployment_best_practices.html#security-recommendations)
-    - [Adobe - User Sync Tool Account Deletion Policy](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/decide_deletion_policy.html)
-    - [Adobe - User Sync Tool Scheduling](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/scheduling.html)
+  - [Adobe - User Sync Tool Command Line Options](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/command_line_options.html)
+  - [Adobe - User Sync Tool Testing Guidance](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/test_run.html)
+  - [Adobe - User Sync Tool Deployment Best Practices - Security](https://adobe-apiplatform.github.io/user-sync.py/en/user-manual/deployment_best_practices.html#security-recommendations)
+  - [Adobe - User Sync Tool Account Deletion Policy](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/decide_deletion_policy.html)
+  - [Adobe - User Sync Tool Scheduling](https://adobe-apiplatform.github.io/user-sync.py/en/success-guide/scheduling.html)
 - [Mac Mule - Shared Device Licensing](https://macmule.com/2019/01/30/adobe-shared-device-licensing/)
 - [Darren Wallace - Shared Device Licensing Presentation at University of Utah Macadmins Meeting](https://dazwallace.wordpress.com/2019/02/20/uou-adobe-sdl/)
 - [Adobe Shared Device Licensing Webinar](https://seminars.adobeconnect.com/pmwrvmxilaui/)

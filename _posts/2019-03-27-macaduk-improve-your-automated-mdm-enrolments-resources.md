@@ -9,10 +9,10 @@ I was lucky enough to share the stage with [Joel Rennich](https://www.linkedin.c
 
 Check out the video:
 
-https://www.youtube.com/watch?v=FbA0Cx\_LeSA
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FbA0Cx_LeSA?si=6-vtUluDZB-CEN5v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 All my slides, documentation, example scripts and other bits and bobs are all available here:
 
-**https://github.com/neilmartin83/MacADUK-2019**
+**<https://github.com/neilmartin83/MacADUK-2019>**
 
 I hope you enjoyed yourself and got something useful to take away. Thanks to the conference organisers and Joel for a great time! :-)
