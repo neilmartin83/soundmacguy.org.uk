@@ -11,7 +11,7 @@ It's been difficult to find a central repository of information around how to mi
 
 ## Getting started
 
-Firstly, visit [https://www.eset.com/int/scep/](https://www.eset.com/int/scep/) and fill out the form to get your year's worth of licenses. It's worth creating an account at http://eba.eset.com as well to keep your license details centrally stored and managed.
+Firstly, visit [https://www.eset.com/int/scep/](https://www.eset.com/int/scep/) and fill out the form to get your year's worth of licenses. It's worth creating an account at <http://eba.eset.com> as well to keep your license details centrally stored and managed.
 
 The next place you'll get pushed to is here, which has instructions on how to apply your license to the installer package using ESET's **add\_token** tool: [https://support.eset.com/kb7026/](https://support.eset.com/kb7026/) - and it tries to steer you to download the full-fat Endpoint Security product that includes a firewall amongst other things.
 
@@ -33,28 +33,28 @@ chmod +x /path/to/add_token
 
 - When you mount the downloaded DMG, it contains an alias for the installer package - you have to ctrl+click it and choose **Show Original** to get the actual package itself.
 - ESET Endpoint Antivirus installs a Launch Daemon and Launch Agent:
-    - **com.eset.esets\_daemon.plist** - Launch Daemon running at system level all the time. This loads **esets\_daemon** which provides real-time scanning, scheduling and all the background-level stuff ESET needs.
-        
-    - **com.eset.esets\_gui.plist** - Launch Agent loaded in the user context when they log in. This launches the GUI parts of ESET; **esets\_gui** (this is also what loads when you double-click the application). It includes a menu bar applet and the application user interface.
-        
+  - **com.eset.esets\_daemon.plist** - Launch Daemon running at system level all the time. This loads **esets\_daemon** which provides real-time scanning, scheduling and all the background-level stuff ESET needs.
+
+  - **com.eset.esets\_gui.plist** - Launch Agent loaded in the user context when they log in. This launches the GUI parts of ESET; **esets\_gui** (this is also what loads when you double-click the application). It includes a menu bar applet and the application user interface.
+
 - If SCEP is present, ESET's installer will cleanly remove it, export and import its settings.
-    - User level (GUI) settings are copied to all user accounts on the Mac in ~/.esets/gui.cfg - watch out, that folder is owned by root... New users get the default gui.cfg which you may not like - more on this later.
-    - I didn't test thoroughly which settings were exported/imported as I'd be deploying ESET to Macs without SCEP as well and be looking to provide a complete configuration with the install, so this wasn't that useful for me.
+  - User level (GUI) settings are copied to all user accounts on the Mac in ~/.esets/gui.cfg - watch out, that folder is owned by root... New users get the default gui.cfg which you may not like - more on this later.
+  - I didn't test thoroughly which settings were exported/imported as I'd be deploying ESET to Macs without SCEP as well and be looking to provide a complete configuration with the install, so this wasn't that useful for me.
 - The package scripts do make assumptions that user homes are in /Users - so watch out if they're not in your environment.
 - If you run the GUI installer, you get to choose which parts are installed/enabled. Unfortunately I looked at the InstallerChoices XML and they don't appear there so you can't control them that way with a command line install/deployment with your management tools. They are:
-    - **Device Control** - lets you control access to externally connected devices (block for certain users etc) - disabled by default
-    - **Web Access Protection** (inspects HTTP/S traffic on specified ports) - enabled by default
-    - **Email Protection** (inspects POP/IMAP traffic) - enabled by default
-    - **LiveGrid** (Uploads information/files that are found to be infected or suspicious to ESET) - enabled by default
+  - **Device Control** - lets you control access to externally connected devices (block for certain users etc) - disabled by default
+  - **Web Access Protection** (inspects HTTP/S traffic on specified ports) - enabled by default
+  - **Email Protection** (inspects POP/IMAP traffic) - enabled by default
+  - **LiveGrid** (Uploads information/files that are found to be infected or suspicious to ESET) - enabled by default
 - The installer package appears to work fine when invoked via the command line (i.e. installer command) or deployed through management tools like Jamf. It's very similar to SCEP's one.
 - If you don't want the GUI to start straight after installation (e.g if you want to configure it first - see below), the following file must be present before installation begins:
 
 ```bash
 /Library/Application Support/ESET/esets/cache/do_not_launch_esets_gui_after_installation
 ```
-        
+
 - If you're deploying to macOS 10.13 or 10.14 (High Sierra/Mojave), bear in mind this comes with a kernel extension you'll need to whitelist or your users will have to allow it manually during installation. The Team ID to whitelist is **P8DQRXPVLP.**
-- If you're deploying to macOS 10.14, you need to allow ESET full disk access. See [this post](https://soundmacguy.wordpress.com/2019/01/23/eset-endpoint-antivirus-privacy-preferences-policy-control/) for more details.
+- If you're deploying to macOS 10.14, you need to allow ESET full disk access. See [this post](/2019/01/23/eset-endpoint-antivirus-privacy-preferences-policy-control.html) for more details.
 
 ### Remote management?
 
