@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "terraform-provider-axm v1.6.0 — It's time for Business"
+title: "terraform-provider-axm v1.6.0 - It's time for Business"
 date: 2026-04-15
 ---
 
@@ -35,12 +35,12 @@ resource "axm_blueprint" "onboarding" {
 }
 ```
 
-All six relationship types are supported — `app_ids`, `configuration_ids`, `package_ids`, `device_ids`, `user_ids` and `user_group_ids`. Terraform will diff your desired state against what's in Apple Business and add or remove relationships accordingly. Drift detection works too, so if someone sneaks in a change via the UI, your next `plan` will see it.
+All six relationship types are supported - `app_ids`, `configuration_ids`, `package_ids`, `device_ids`, `user_ids` and `user_group_ids`. Terraform will diff your desired state against what's in Apple Business and add or remove relationships accordingly. Drift detection works too, so if someone sneaks in a change via the UI, your next `plan` will see it.
 
 There are also data sources for looking stuff up:
 
-- **`axm_blueprint`** — fetch a single Blueprint by ID, including all its relationships
-- **`axm_blueprints`** — list every Blueprint in your organisation
+- **`axm_blueprint`** - fetch a single Blueprint by ID, including all its relationships
+- **`axm_blueprints`** - list every Blueprint in your organisation
 
 And of course, the `list` resource is there for those of us who partake in [Query](https://developer.hashicorp.com/terraform/language/query), with filters for `name`, `name_contains` and `status`.
 
@@ -58,10 +58,10 @@ resource "axm_configuration" "wifi" {
 
 For all other configuration types (the ones Apple manages), there are read-only data sources:
 
-- **`axm_configuration`** — fetch a single configuration by ID (includes the profile payload for `CUSTOM_SETTING` types)
-- **`axm_configurations`** — list all configurations
+- **`axm_configuration`** - fetch a single configuration by ID (includes the profile payload for `CUSTOM_SETTING` types)
+- **`axm_configurations`** - list all configurations
 
-The `list` resource supports filtering too — `name`, `name_contains` and `configuration_type`.
+The `list` resource supports filtering too - `name`, `name_contains` and `configuration_type`.
 
 ## New data sources
 
@@ -75,7 +75,7 @@ Beyond Blueprints and Configurations, we also have data sources:
 | `axm_user_group` / `axm_user_groups` | Look up user groups |
 | `axm_audit_events` | Query the audit log with date range filters |
 
-The singular variants fetch by ID; the plural ones grab the lot. Having all this data accessible in Terraform opens up some interesting possibilities — cross-referencing users with devices, auditing changes, building reports, that kind of endeavour.
+The singular variants fetch by ID; the plural ones grab the lot. Having all this data accessible in Terraform opens up some interesting possibilities - cross-referencing users with devices, auditing changes, building reports, that kind of endeavour.
 
 ## Go forth and grab it
 
@@ -92,4 +92,4 @@ terraform {
 
 Full docs are on the [Terraform Registry](https://registry.terraform.io/providers/neilmartin83/axm/latest/docs) and source is on [GitHub](https://github.com/neilmartin83/terraform-provider-axm). This is really just a little hobby that satisfies my interest in working with APIs. It scratches an itch, but perhaps someone out there will find it interesting or even useful. As always, feedback, berating, issues and PRs are welcome!
 
-I really hope the glorious fruit company keeps expanding this API — I've still got my fingers crossed for MDM server token creation and VPP token management. One day... 🤞
+I really hope the glorious fruit company keeps expanding this API - I've still got my fingers crossed for MDM server token creation and VPP token management. One day... 🤞
