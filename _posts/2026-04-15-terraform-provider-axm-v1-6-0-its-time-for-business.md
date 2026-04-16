@@ -4,7 +4,7 @@ title: "terraform-provider-axm v1.6.0 - It's time for Business"
 date: 2026-04-15
 ---
 
-Hello Terraformers! It's been a while since the last update on [terraform-provider-axm](https://registry.terraform.io/providers/neilmartin83/axm/latest/docs). Version 1.6.0 is a bit chunkier than usual and it brings a few new resources and data sources, thanks to Apple continuing releasing the [Business API](https://developer.apple.com/documentation/apple-school-and-business-manager-api/apple-school-manager-and-apple-business-api-changelog).
+Hello Terraformers! It's been a while since the last update on [terraform-provider-axm](https://registry.terraform.io/providers/neilmartin83/axm/latest/docs). Version 1.6.0 is a bit chunkier than usual and it brings a few new resources and data sources, thanks to Apple releasing the [Business API](https://developer.apple.com/documentation/apple-school-and-business-manager-api/apple-school-manager-and-apple-business-api-changelog).
 
 Let's peruse!
 
